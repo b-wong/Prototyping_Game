@@ -301,7 +301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashDistance: 20
   dashTime: 0.1
-  edgeBufferLimit: 0.5
+  edgeBufferLimit: 0.05
   jumpHeight: 4
   timeToJumpApex: 0.4
   wallJumpClimb: {x: 0, y: 4}
@@ -310,7 +310,7 @@ MonoBehaviour:
   wallSlideSpeedMax: 3
   wallStickTime: 0.25
   accelerationTime: 0
-  bufferLimit: 0.5
+  bufferLimit: 0.05
 --- !u!61 &892162483
 BoxCollider2D:
   m_ObjectHideFlags: 0
