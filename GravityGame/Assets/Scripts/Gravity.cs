@@ -24,6 +24,14 @@ public class Gravity : MonoBehaviour {
         {
             gravity = new Vector2(0, 5);
         }
+        if (Input.GetKey("right"))
+        {
+            gravity = new Vector2(5, 0);
+        }
+        if (Input.GetKey("left"))
+        {
+            gravity = new Vector2(-5, 0);
+        }
     }
 
     private void Update()
