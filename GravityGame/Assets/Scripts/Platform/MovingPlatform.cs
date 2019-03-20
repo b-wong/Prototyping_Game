@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class MovingPlatform : MonoBehaviour, IToggleable
 {
-    public float speed;
-    public float timeBetweenMove;
-
     public Transform pathHolder;
 
-    public Transform[] path;
+    public float speed;
+    public float timeBetweenMove;
 
     public float PauseDuration;
     private bool pausePlatform = false;
@@ -25,17 +23,7 @@ public class MovingPlatform : MonoBehaviour
         StartCoroutine(FollowPath(waypoints));
     }
 
-    private void Update()
-    {
-        if (Input.GetButtonDown("Jump"))
-            //if (pausePlatform == false)
-            //    pausePlatform = true;
-            //else pausePlatform = false;
-            StartCoroutine(PlatformPauseTimer(PauseDuration));
-    }
-
-
-
+    //goes from waypoint to waypoint
     IEnumerator FollowPath(Vector3[] waypoints)
     {
         transform.position = waypoints[0];
@@ -57,16 +45,6 @@ public class MovingPlatform : MonoBehaviour
             }
             yield return null;
         }
-
-    }
-
-    IEnumerator Move(Vector3 destination, float speed)
-    {
-        while (transform.position != destination)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
-            yield return null;
-        }
     }
 
     IEnumerator PlatformPauseTimer(float pauseDuration)
@@ -74,9 +52,13 @@ public class MovingPlatform : MonoBehaviour
         pausePlatform = true;
         while (pausePlatform)
         {
-            //Debug.Log(timer);
             yield return new WaitForSeconds(pauseDuration);
             pausePlatform = false;
         }
+    }
+
+    public void Toggle()
+    {
+        StartCoroutine(PlatformPauseTimer(PauseDuration));
     }
 }
