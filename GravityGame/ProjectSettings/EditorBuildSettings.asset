@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Scn_Pamela.unity
+    guid: d1768f16206154cb2b94d00f7c37d428
   m_configObjects: {}
