@@ -7,6 +7,12 @@ public class PhysicsObject : MonoBehaviour
 
     public float minGroundNormalY = .65f;
     public float gravityModifier = 1f;
+    
+
+    Vector2 gravityUp = new Vector2(0, 9.8f);
+    Vector2 gravityDown = new Vector2(0, -9.8f);
+    Vector2 gravityDirection;
+    public bool gravitySwapped = false;
 
     protected Vector2 targetVelocity;
     protected bool grounded;
@@ -28,6 +34,7 @@ public class PhysicsObject : MonoBehaviour
 
     void Start()
     {
+        gravityDirection = gravityDown;
         contactFilter.useTriggers = false;
         contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
         contactFilter.useLayerMask = true;
@@ -46,7 +53,18 @@ public class PhysicsObject : MonoBehaviour
 
     void FixedUpdate()
     {
-        velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
+
+        //gravity swap
+        if (gravitySwapped == true)
+        {
+            gravityDirection = gravityUp;
+        }
+        else if (gravitySwapped == false)
+        {
+            gravityDirection = gravityDown;
+        }
+
+        velocity += gravityModifier * gravityDirection * Time.deltaTime;
         velocity.x = targetVelocity.x;
 
         grounded = false;
@@ -58,10 +76,13 @@ public class PhysicsObject : MonoBehaviour
         Vector2 move = moveAlongGround * deltaPosition.x;
 
         Movement(move, false);
+        
 
         move = Vector2.up * deltaPosition.y;
 
         Movement(move, true);
+
+
     }
 
     void Movement(Vector2 move, bool yMovement)
@@ -104,6 +125,11 @@ public class PhysicsObject : MonoBehaviour
         }
 
         rb2d.position = rb2d.position + move.normalized * distance;
+    }
+
+    public void GravitySwap()
+    {
+
     }
 
 }

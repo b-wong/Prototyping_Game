@@ -11,7 +11,7 @@ public class PhysicsObjectDraft : MonoBehaviour
 
     Vector2 gravityUp = new Vector2(0, 9.8f);
     Vector2 gravityDown = new Vector2(0, -9.8f);
-    Vector2 gravitySwap;
+    Vector2 gravityDirection;
 
     public float gravityModifier = 1f;
 
@@ -28,7 +28,7 @@ public class PhysicsObjectDraft : MonoBehaviour
     private void Start()
     {
         isFrozen = false;
-        gravitySwap = gravityDown;
+        gravityDirection = gravityDown;
 
         contactFilter.useTriggers = false;
         // Uses Physics2D layer settings to check collisions
@@ -51,7 +51,7 @@ public class PhysicsObjectDraft : MonoBehaviour
         }*/
 
         // Uses default Phys2D gravity to affect velocity at an increasing rate
-        velocity += gravityModifier * gravitySwap * Time.deltaTime;
+        velocity += gravityModifier * gravityDirection * Time.deltaTime;
 
         isGrounded = false;
 
@@ -112,10 +112,10 @@ public class PhysicsObjectDraft : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            if (gravitySwap == gravityDown)
-            { gravitySwap = gravityUp; }
-            else if (gravitySwap == gravityUp)
-            { gravitySwap = gravityDown; }
+            if (gravityDirection == gravityDown)
+            { gravityDirection = gravityUp; }
+            else if (gravityDirection == gravityUp)
+            { gravityDirection = gravityDown; }
 
         }
     }
