@@ -12,12 +12,15 @@ public class Gravity : MonoBehaviour {
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    public void GravityAdd()
+    public void GravityChange()
     {
-        rb2d.AddForce(gravity);
+        
+        //constantly adds force, just change the physics2D gravity component directly after the input
+        //rb2d.AddForce(gravity);
 
         if (Input.GetKey("down"))
         {
+            Debug.Log("down");
             gravity = new Vector2(0, -5);
         }
         if (Input.GetKey("up"))
@@ -32,10 +35,12 @@ public class Gravity : MonoBehaviour {
         {
             gravity = new Vector2(-5, 0);
         }
+
+        Physics2D.gravity = gravity;
     }
 
     private void Update()
     {
-        GravityAdd();
+        GravityChange();
     }
 }
