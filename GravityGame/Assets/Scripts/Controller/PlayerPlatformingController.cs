@@ -13,7 +13,7 @@ public class PlayerPlatformingController : PhysicsObject
     public string freezeButton = "Player1Freeze";
     public string gravSwapButton = "Player1Grav";
 
-    public bool isFrozen = false;
+    //public bool isFrozen = false;
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -34,6 +34,7 @@ public class PlayerPlatformingController : PhysicsObject
 
     protected override void ComputeVelocity()
     {
+        /*
         if (Input.GetButtonDown(freezeButton) && isFrozen == false)
         {
             isFrozen = true;
@@ -47,12 +48,16 @@ public class PlayerPlatformingController : PhysicsObject
 
             return;
         }
-
+        */
+        if (Input.GetButtonDown(freezeButton))
+        {
+            isFrozen = !isFrozen;
+        }
         
         if (Input.GetButtonDown(gravSwapButton))
         {
             //toggle gravity swap
-            physObject.gravitySwapped = !physObject.gravitySwapped;
+            //physObject.gravitySwapped = !physObject.gravitySwapped;
             gravitySwapped = !gravitySwapped;
         }
 
@@ -60,6 +65,21 @@ public class PlayerPlatformingController : PhysicsObject
 
         move.x = Input.GetAxis(horizontalCtrl);
 
+        if (Input.GetButtonDown(jumpButton) && grounded)
+        {
+
+            if (gravitySwapped == false)
+            {
+                velocity.y = jumpTakeOffSpeed;
+            }
+            else if (gravitySwapped == true)
+            {
+                velocity.y = -jumpTakeOffSpeed;
+            }
+
+        }
+
+        /*
         if (Input.GetButtonDown(jumpButton) && grounded)
         {
             velocity.y = jumpTakeOffSpeed;
@@ -71,6 +91,18 @@ public class PlayerPlatformingController : PhysicsObject
                 velocity.y = velocity.y * 0.5f;
             }
         }
+        */
+
+        /*
+        if (gravitySwapped == false)
+        {
+            move = Vector2.up * deltaPosition.y;
+        }
+        else if (gravitySwapped == true)
+        {
+            move = Vector2.down * deltaPosition.y;
+        }
+        */
 
         bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
         if (flipSprite)

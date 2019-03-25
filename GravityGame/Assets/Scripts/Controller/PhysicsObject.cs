@@ -7,7 +7,8 @@ public class PhysicsObject : MonoBehaviour
 
     public float minGroundNormalY = .65f;
     public float gravityModifier = 1f;
-    
+
+    public bool isFrozen = true;
 
     Vector2 gravityUp = new Vector2(0, 9.8f);
     Vector2 gravityDown = new Vector2(0, -9.8f);
@@ -18,7 +19,7 @@ public class PhysicsObject : MonoBehaviour
     protected bool grounded;
     protected Vector2 groundNormal;
     protected Rigidbody2D rb2d;
-    protected Vector2 velocity;
+    public Vector2 velocity;
     protected ContactFilter2D contactFilter;
     protected RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
     protected List<RaycastHit2D> hitBufferList = new List<RaycastHit2D>(16);
@@ -53,6 +54,10 @@ public class PhysicsObject : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isFrozen == true)
+        {
+            return;
+        }
 
         //gravity swap
         if (gravitySwapped == true)
@@ -76,8 +81,16 @@ public class PhysicsObject : MonoBehaviour
         Vector2 move = moveAlongGround * deltaPosition.x;
 
         Movement(move, false);
-        
-
+        /*
+        if (gravitySwapped == false)
+        {
+            move = Vector2.up * deltaPosition.y;
+        }
+        else if (gravitySwapped == true)
+        {
+            move = Vector2.down * deltaPosition.y;
+        }
+        */
         move = Vector2.up * deltaPosition.y;
 
         Movement(move, true);
@@ -101,7 +114,75 @@ public class PhysicsObject : MonoBehaviour
             for (int i = 0; i < hitBufferList.Count; i++)
             {
                 Vector2 currentNormal = hitBufferList[i].normal;
-                if (currentNormal.y > minGroundNormalY)
+
+                /*
+                //groundcheck
+                if (gravitySwapped == false)
+                {
+                    if (currentNormal.y > minGroundNormalY)
+                    {
+                        grounded = true;
+                        if (yMovement)
+                        {
+                            groundNormal = currentNormal;
+                            currentNormal.x = 0;
+                        }
+                    }
+                }
+                else if (gravitySwapped == true)
+                {
+                    if (yMovement)
+                    {
+                        if (currentNormal.y < minGroundNormalY)
+                        {
+                            grounded = true;
+
+                            groundNormal = currentNormal;
+                            currentNormal.x = 0;
+                        }
+                    }
+                    else
+                    {
+                        if (currentNormal.y > minGroundNormalY)
+                        {
+                            grounded = true;
+                        }
+                    }
+                }
+                */
+
+                /*
+                //ground check
+                if (gravitySwapped == false)
+                {
+                    if (currentNormal.y > minGroundNormalY)
+                    {
+                        grounded = true;
+                        if (yMovement)
+                        {
+                            groundNormal = currentNormal;
+                            currentNormal.x = 0;
+                        }
+                    }
+                }
+                else if (gravitySwapped == true)
+                {
+                    //move.x *= -1;
+                    if (currentNormal.y < minGroundNormalY)
+                    {
+                        grounded = true;
+                        if (yMovement)
+                        {
+                            groundNormal = currentNormal;
+                            currentNormal.x = 0;
+                        }
+                    }
+                }
+                */
+
+
+                
+                if (currentNormal.y > minGroundNormalY || currentNormal.y < minGroundNormalY)
                 {
                     grounded = true;
                     if (yMovement)
@@ -110,6 +191,7 @@ public class PhysicsObject : MonoBehaviour
                         currentNormal.x = 0;
                     }
                 }
+                
 
                 float projection = Vector2.Dot(velocity, currentNormal);
                 if (projection < 0)

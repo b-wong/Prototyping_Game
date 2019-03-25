@@ -620,7 +620,6 @@ GameObject:
   m_Component:
   - component: {fileID: 778766515}
   - component: {fileID: 778766514}
-  - component: {fileID: 778766513}
   - component: {fileID: 778766512}
   - component: {fileID: 778766511}
   - component: {fileID: 778766510}
@@ -693,6 +692,7 @@ MonoBehaviour:
   minGroundNormalY: 0.65
   gravityModifier: 8.5
   gravitySwapped: 0
+  velocity: {x: 0, y: 0}
   maxSpeed: 7
   jumpTakeOffSpeed: 22.75
   jumpButton: Player1Jump
@@ -700,21 +700,6 @@ MonoBehaviour:
   freezeButton: Player1Freeze
   gravSwapButton: Player1Grav
   isFrozen: 0
---- !u!114 &778766513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778766509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edd48d1cdbffc0649ba5fa5efc7fb9f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minGroundNormalY: 0.65
-  gravityModifier: 1
-  gravitySwapped: 0
 --- !u!212 &778766514
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -787,7 +772,6 @@ GameObject:
   m_Component:
   - component: {fileID: 904165694}
   - component: {fileID: 904165693}
-  - component: {fileID: 904165692}
   - component: {fileID: 904165691}
   - component: {fileID: 904165690}
   - component: {fileID: 904165689}
@@ -860,6 +844,7 @@ MonoBehaviour:
   minGroundNormalY: 0.65
   gravityModifier: 8.5
   gravitySwapped: 0
+  velocity: {x: 0, y: 0}
   maxSpeed: 7
   jumpTakeOffSpeed: 22.75
   jumpButton: Player2Jump
@@ -867,21 +852,6 @@ MonoBehaviour:
   freezeButton: Player2Freeze
   gravSwapButton: Player2Grav
   isFrozen: 0
---- !u!114 &904165692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 904165688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edd48d1cdbffc0649ba5fa5efc7fb9f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minGroundNormalY: 0.65
-  gravityModifier: 1
-  gravitySwapped: 0
 --- !u!212 &904165693
 SpriteRenderer:
   m_ObjectHideFlags: 0
