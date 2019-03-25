@@ -24,7 +24,7 @@ public class InteractiveObjController : MonoBehaviour {
     }
 
     void Update () {
-        this.gravity.GravityAdd();
+        //this.gravity.GravityAdd();
 
     }
 }

@@ -10,6 +10,17 @@ public class AlternatePlayerCtrl : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))    //jump         {             transform.Translate(Vector3.up * speed * Time.deltaTime);         }         if (Input.GetKey(KeyCode.A))    //left         {             transform.Translate(Vector3.left * speed * Time.deltaTime);         }         if (Input.GetKey(KeyCode.D))    // right         {             transform.Translate(Vector3.right * speed * Time.deltaTime);         }
+        if (Input.GetKey(KeyCode.W))    //jump
+        {
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.A))    //left
+        {
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.D))    // right
+        {
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
+        }
     }
 }

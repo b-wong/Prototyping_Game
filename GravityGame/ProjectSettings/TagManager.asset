@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Collectable
+  - Player1
+  - Player2
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - 
   - Geometry
   - Player
-  - 
+  - TogglePlatform
   - 
   - 
   - 
