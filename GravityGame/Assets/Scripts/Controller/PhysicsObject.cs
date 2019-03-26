@@ -76,7 +76,7 @@ public class PhysicsObject : MonoBehaviour
 
         Vector2 deltaPosition = velocity * Time.deltaTime;
 
-        Vector2 moveAlongGround = new Vector2(groundNormal.y, -groundNormal.x);
+        Vector2 moveAlongGround = new Vector2(Mathf.Abs(groundNormal.y), -groundNormal.x);
 
         Vector2 move = moveAlongGround * deltaPosition.x;
 
@@ -182,7 +182,7 @@ public class PhysicsObject : MonoBehaviour
 
 
                 
-                if (currentNormal.y > minGroundNormalY || currentNormal.y < minGroundNormalY)
+                if (Mathf.Abs(currentNormal.y) > minGroundNormalY)
                 {
                     grounded = true;
                     if (yMovement)

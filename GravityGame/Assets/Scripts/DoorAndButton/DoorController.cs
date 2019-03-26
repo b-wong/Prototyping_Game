@@ -14,10 +14,10 @@ public class DoorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (doorIsOpening == true)
+        if (doorIsOpening)
         {
             Door.transform.Translate(Vector3.up * Time.deltaTime * 5);
-           
+
             if (Door.transform.position.y > doorMaxHeight)
             {
                 // if door is higher than this point, want door to stop going up
@@ -52,6 +52,21 @@ public class DoorController : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         doorIsClosing = true;
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other != null)
+        {
+            doorIsOpening = true;
+            doorIsClosing = false;
+        }
+        else
+        {
+            doorIsOpening = false;
+            doorIsClosing = true;
+
+        }
     }
 
     //private void OnTriggerEnter2D(Collider2D collision)
