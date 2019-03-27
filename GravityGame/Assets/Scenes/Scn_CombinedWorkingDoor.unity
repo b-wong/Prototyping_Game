@@ -1548,11 +1548,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0e82180fa771243979c2a0a0a55dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Door: {fileID: 844902602}
-  doorIsOpening: 0
-  doorIsClosing: 0
-  doorMaxHeight: -0.31
-  doorMinHeight: -3.096
+  isOpen: 0
+  OpenPosition: {fileID: 0}
+  ClosePosition: {fileID: 0}
+  DoorMoveTime: 0
 --- !u!61 &2084022792
 BoxCollider2D:
   m_ObjectHideFlags: 0
