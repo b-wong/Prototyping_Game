@@ -4,70 +4,54 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
+    public bool isOpen;
 
-    public GameObject Door;
-    public bool doorIsOpening;
-    public bool doorIsClosing;
-    public float doorMaxHeight;
-    public float doorMinHeight;
+    public Transform OpenPosition;
+    public Transform ClosePosition;
 
+    private Vector3 openPosition;
+    private Vector3 closePosition;
+
+    public float DoorMoveTime;
+
+    private void Start()
+    {
+        openPosition = new Vector3(OpenPosition.position.x, OpenPosition.position.y, OpenPosition.position.z);
+        closePosition = new Vector3(ClosePosition.position.x, ClosePosition.position.y, ClosePosition.position.z);
+    }
+    
     // Update is called once per frame
     void Update()
     {
-        if (doorIsOpening == true)
-        {
-            Door.transform.Translate(Vector3.up * Time.deltaTime * 5);
-           
-            if (Door.transform.position.y > doorMaxHeight)
-            {
-                // if door is higher than this point, want door to stop going up
-                doorIsOpening = false;
-            }
-        }
-
-        if (doorIsClosing == true)
-        {
-            Door.transform.Translate(-Vector3.up * Time.deltaTime * 5);
-            if (Door.transform.position.y < doorMinHeight)
-            {
-                // if door is higher than this point, want door to stop going up
-                doorIsClosing = false;
-            }
-
-        }
-
-        if (doorIsClosing == true && doorIsOpening == true)
-        {
-            doorIsClosing = true;
-            doorIsOpening = false;
-        }
-
+        if (isOpen)
+            StartCoroutine(OpenDoorMechanism(DoorMoveTime));
+        if (!isOpen && transform.position != closePosition)
+            StartCoroutine(CloseDoorMechanism(DoorMoveTime));
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    IEnumerator OpenDoorMechanism(float TimeToMove)
     {
-        doorIsOpening = true;
+        float timer = 0;
+        Vector3 startPosition = transform.position;
+
+        while (timer < TimeToMove)
+        {
+            transform.position = Vector3.Lerp(startPosition, openPosition, timer / TimeToMove);
+            timer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    IEnumerator CloseDoorMechanism(float TimeToMove)
     {
-        doorIsClosing = true;
+        float timer = 0;
+        Vector3 startPosition = transform.position;
+
+        while (timer < TimeToMove)
+        {
+            transform.position = Vector3.Lerp(startPosition, closePosition, timer / TimeToMove);
+            timer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        doorIsOpening = true;
-    //    }
-    //}
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        doorIsClosing = true;
-    //    }
-    //}
-
 }

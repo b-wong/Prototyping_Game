@@ -19,11 +19,7 @@ public class GravityController : MonoBehaviour
     public float GravityForce1 = 9.8f;
     public float GravityForce2 = 9.8f;
 
-    private void Awake()
-    {
-    }
-
-    private void Update()
+    private void FixedUpdate()
     {
         GravityInput();
         ApplyGravity();
