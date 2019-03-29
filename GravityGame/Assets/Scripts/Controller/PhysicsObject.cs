@@ -8,12 +8,13 @@ public class PhysicsObject : MonoBehaviour
     public float minGroundNormalY = .65f;
     public float gravityModifier = 1f;
 
-    public bool isFrozen = true;
+
 
     Vector2 gravityUp = new Vector2(0, 9.8f);
     Vector2 gravityDown = new Vector2(0, -9.8f);
-    Vector2 gravityDirection;
+    Vector2 gravityDirection = new Vector2(0, -9.8f);
     public bool gravitySwapped = false;
+    public bool isFrozen = true;
 
     protected Vector2 targetVelocity;
     protected bool grounded;
@@ -33,9 +34,16 @@ public class PhysicsObject : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
     }
 
+
+    private void Awake()
+    {
+        // Add this object to static list so it may be grouped with others in level
+        PhysicsManager.instance.physicsObjects.Add(this);
+    }
+
     void Start()
     {
-        gravityDirection = gravityDown;
+        //gravityDirection = gravityDown;
         contactFilter.useTriggers = false;
         contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
         contactFilter.useLayerMask = true;
@@ -43,8 +51,10 @@ public class PhysicsObject : MonoBehaviour
 
     void Update()
     {
+        GravitySwap();
         targetVelocity = Vector2.zero;
         ComputeVelocity();
+
     }
 
     protected virtual void ComputeVelocity()
@@ -54,19 +64,28 @@ public class PhysicsObject : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isFrozen == true)
-        {
-            return;
-        }
+
+        //gravityDirection = gravityDown;
 
         //gravity swap
-        if (gravitySwapped == true)
+
+        if (gravitySwapped == false || isFrozen == true)
+        {
+            gravityDirection = gravityDown;
+        }
+        else if (gravitySwapped == true)
         {
             gravityDirection = gravityUp;
         }
-        else if (gravitySwapped == false)
+
+        /*foreach (PhysicsObject item in PhysicsManager.instance.physicsObjects)
         {
-            gravityDirection = gravityDown;
+
+        }*/
+
+        if (isFrozen == true)
+        {
+            return;
         }
 
         velocity += gravityModifier * gravityDirection * Time.deltaTime;
@@ -81,16 +100,7 @@ public class PhysicsObject : MonoBehaviour
         Vector2 move = moveAlongGround * deltaPosition.x;
 
         Movement(move, false);
-        /*
-        if (gravitySwapped == false)
-        {
-            move = Vector2.up * deltaPosition.y;
-        }
-        else if (gravitySwapped == true)
-        {
-            move = Vector2.down * deltaPosition.y;
-        }
-        */
+
         move = Vector2.up * deltaPosition.y;
 
         Movement(move, true);
@@ -115,73 +125,7 @@ public class PhysicsObject : MonoBehaviour
             {
                 Vector2 currentNormal = hitBufferList[i].normal;
 
-                /*
-                //groundcheck
-                if (gravitySwapped == false)
-                {
-                    if (currentNormal.y > minGroundNormalY)
-                    {
-                        grounded = true;
-                        if (yMovement)
-                        {
-                            groundNormal = currentNormal;
-                            currentNormal.x = 0;
-                        }
-                    }
-                }
-                else if (gravitySwapped == true)
-                {
-                    if (yMovement)
-                    {
-                        if (currentNormal.y < minGroundNormalY)
-                        {
-                            grounded = true;
 
-                            groundNormal = currentNormal;
-                            currentNormal.x = 0;
-                        }
-                    }
-                    else
-                    {
-                        if (currentNormal.y > minGroundNormalY)
-                        {
-                            grounded = true;
-                        }
-                    }
-                }
-                */
-
-                /*
-                //ground check
-                if (gravitySwapped == false)
-                {
-                    if (currentNormal.y > minGroundNormalY)
-                    {
-                        grounded = true;
-                        if (yMovement)
-                        {
-                            groundNormal = currentNormal;
-                            currentNormal.x = 0;
-                        }
-                    }
-                }
-                else if (gravitySwapped == true)
-                {
-                    //move.x *= -1;
-                    if (currentNormal.y < minGroundNormalY)
-                    {
-                        grounded = true;
-                        if (yMovement)
-                        {
-                            groundNormal = currentNormal;
-                            currentNormal.x = 0;
-                        }
-                    }
-                }
-                */
-
-
-                
                 if (Mathf.Abs(currentNormal.y) > minGroundNormalY)
                 {
                     grounded = true;
@@ -191,7 +135,7 @@ public class PhysicsObject : MonoBehaviour
                         currentNormal.x = 0;
                     }
                 }
-                
+
 
                 float projection = Vector2.Dot(velocity, currentNormal);
                 if (projection < 0)
@@ -211,7 +155,9 @@ public class PhysicsObject : MonoBehaviour
 
     public void GravitySwap()
     {
+        
 
+        
     }
 
 }
