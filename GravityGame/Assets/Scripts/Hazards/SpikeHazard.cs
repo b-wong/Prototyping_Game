@@ -11,7 +11,6 @@ public class SpikeHazard : MonoBehaviour
     public Transform player1RespawnPoint;
     public Transform player2RespawnPoint;
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player1")
