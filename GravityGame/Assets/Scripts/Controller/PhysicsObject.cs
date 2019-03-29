@@ -49,9 +49,8 @@ public class PhysicsObject : MonoBehaviour
         contactFilter.useLayerMask = true;
     }
 
-    void Update()
+    protected virtual void Update()
     {
-        GravitySwap();
         targetVelocity = Vector2.zero;
         ComputeVelocity();
 
@@ -152,13 +151,5 @@ public class PhysicsObject : MonoBehaviour
 
         rb2d.position = rb2d.position + move.normalized * distance;
     }
-
-    public void GravitySwap()
-    {
-        
-
-        
-    }
-
 }
 

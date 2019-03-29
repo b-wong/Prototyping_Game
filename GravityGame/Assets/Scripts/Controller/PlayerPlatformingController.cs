@@ -20,16 +20,51 @@ public class PlayerPlatformingController : PhysicsObject
 
     private PhysicsObject physObject;
 
+    public static int numCollectable = 0;
+    GravityController gravityController;
+
     // Use this for initialization
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
+        gravityController = GetComponent<GravityController>();
     }
 
     private void Start()
     {
         physObject = GetComponent<PhysicsObject>();
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+        InputHandling();
+    }
+
+    private void InputHandling()
+    {
+        if (Input.GetButtonDown(freezeButton))
+        {
+            isFrozen = !isFrozen;
+        }
+
+        if (Input.GetButtonDown(gravSwapButton))
+        {
+            TryUseCollectable();
+            //toggle gravity swap
+            //physObject.gravitySwapped = !physObject.gravitySwapped;
+        }
+    }
+
+    private void TryUseCollectable()
+    {
+        if (numCollectable > 0)
+        {
+            numCollectable = numCollectable - 1;
+            gravitySwapped = !gravitySwapped;
+        }
     }
 
     protected override void ComputeVelocity()
@@ -49,17 +84,9 @@ public class PlayerPlatformingController : PhysicsObject
             return;
         }
         */
-        if (Input.GetButtonDown(freezeButton))
-        {
-            isFrozen = !isFrozen;
-        }
+ 
         
-        if (Input.GetButtonDown(gravSwapButton))
-        {
-            //toggle gravity swap
-            //physObject.gravitySwapped = !physObject.gravitySwapped;
-            gravitySwapped = !gravitySwapped;
-        }
+  
 
         Vector2 move = Vector2.zero;
 
@@ -115,4 +142,5 @@ public class PlayerPlatformingController : PhysicsObject
 
         targetVelocity = move * maxSpeed;
     }
+
 }
