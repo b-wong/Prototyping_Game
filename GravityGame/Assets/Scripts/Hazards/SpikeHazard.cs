@@ -5,13 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class SpikeHazard : MonoBehaviour
 {
+
+    public Transform player1;
+    public Transform player2;
+    public Transform player1RespawnPoint;
+    public Transform player2RespawnPoint;
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player1")
         {
-            Debug.Log("ouch");
-            //restart
-            SceneManager.LoadScene(0);
+            player1.transform.position = player1RespawnPoint.transform.position;
+        }
+        if (collision.gameObject.tag == "Player2")
+        {
+            player2.transform.position = player2RespawnPoint.transform.position;
         }
     }
 }
