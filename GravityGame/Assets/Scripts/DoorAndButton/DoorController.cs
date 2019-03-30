@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    public bool isOpen;
+    public DoorTrigger[] isButtonActive;
+
+    [SerializeField]
+    private bool isOpen;
 
     public Transform OpenPosition;
     public Transform ClosePosition;
@@ -23,12 +26,33 @@ public class DoorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isDoorOpen();
+
         if (isOpen)
             StartCoroutine(OpenDoorMechanism(DoorMoveTime));
         if (!isOpen && transform.position != closePosition)
             StartCoroutine(CloseDoorMechanism(DoorMoveTime));
     }
 
+    void isDoorOpen()
+    {
+        if (AreTriggersActive())
+            isOpen = true;
+        else
+            isOpen = false;
+    }
+
+    bool AreTriggersActive()
+    {
+        foreach (DoorTrigger button in isButtonActive)
+        {
+            if (button.isActiveButton)
+                return true;
+        }
+        return false;
+    }
+
+    #region DoorMechanism
     IEnumerator OpenDoorMechanism(float TimeToMove)
     {
         float timer = 0;
@@ -54,4 +78,5 @@ public class DoorController : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
     }
+    #endregion DoorMechanism
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DoorTrigger : MonoBehaviour
 {
+    public bool isActiveButton;
+    
     public DoorController[] DoorInfluences;
     
     private int numberOfInfluences;
@@ -12,11 +14,11 @@ public class DoorTrigger : MonoBehaviour
     {
         if (numberOfInfluences > 0)
             foreach (DoorController door in DoorInfluences)
-                door.isOpen = true;
+                isActiveButton = true;
 
         else
             foreach (DoorController door in DoorInfluences)
-                door.isOpen = false;
+                isActiveButton = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,5 +32,4 @@ public class DoorTrigger : MonoBehaviour
         if (collision != null)
             numberOfInfluences--;
     }
-
 }
