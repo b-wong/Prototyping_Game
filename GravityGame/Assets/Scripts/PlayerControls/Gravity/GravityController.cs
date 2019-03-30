@@ -49,8 +49,7 @@ public class GravityController : MonoBehaviour
 
     public void ApplyGravity()
     {
-
-           player1.m_rigidbody.AddForce(new Vector3(0, GravityForce1, 0), ForceMode.Acceleration);
-            player2.m_rigidbody.AddForce(new Vector3(0, GravityForce2, 0), ForceMode.Acceleration);
+       player1.m_rigidbody.AddForce(new Vector3(0, GravityForce1, 0), ForceMode.Acceleration);
+       player2.m_rigidbody.AddForce(new Vector3(0, GravityForce2, 0), ForceMode.Acceleration);
     }
 }
