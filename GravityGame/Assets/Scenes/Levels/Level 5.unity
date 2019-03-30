@@ -2660,6 +2660,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorMechanism-Vertical
       objectReference: {fileID: 0}
+    - target: {fileID: 4134520326396725067, guid: 6486c2e104173064894d87433a1fea8a,
+        type: 3}
+      propertyPath: isButtonActive.Array.data[0]
+      value: 
+      objectReference: {fileID: 104277809}
     - target: {fileID: 4134520325884722018, guid: 6486c2e104173064894d87433a1fea8a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2715,11 +2720,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 4134520326396725067, guid: 6486c2e104173064894d87433a1fea8a,
+    - target: {fileID: 4134520326396725077, guid: 6486c2e104173064894d87433a1fea8a,
         type: 3}
-      propertyPath: isButtonActive.Array.data[0]
-      value: 
-      objectReference: {fileID: 158633892}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6486c2e104173064894d87433a1fea8a, type: 3}
 --- !u!1001 &5524546248862181377
@@ -2863,6 +2868,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5710172952711516838, guid: bf7d02bce348f074fb2112e3b1f12332,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710172952711516838, guid: bf7d02bce348f074fb2112e3b1f12332,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710172951313540659, guid: bf7d02bce348f074fb2112e3b1f12332,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710172951313540659, guid: bf7d02bce348f074fb2112e3b1f12332,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.42
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf7d02bce348f074fb2112e3b1f12332, type: 3}
 --- !u!1001 &6313852319346623247
@@ -2877,6 +2902,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
+        type: 3}
+      propertyPath: DoorInfluences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
+        type: 3}
+      propertyPath: DoorInfluences.Array.data[0]
+      value: 
+      objectReference: {fileID: 888036612}
     - target: {fileID: 6313852319492082855, guid: 05ffb14f6ee1eba40a121309b9aa3038,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2932,10 +2967,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
-        type: 3}
-      propertyPath: DoorInfluences.Array.data[0]
-      value: 
-      objectReference: {fileID: 888036612}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05ffb14f6ee1eba40a121309b9aa3038, type: 3}
