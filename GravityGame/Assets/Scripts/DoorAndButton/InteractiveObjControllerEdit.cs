@@ -7,13 +7,13 @@ public class InteractiveObjControllerEdit : MonoBehaviour {
     Rigidbody2D rb2d;
     Vector3 objPos;
 
-    IrvinsGravityChange gravity;
+    //IrvinsGravityChange gravity;
 
     private int numMouse;
 
     void Start () {
         rb2d = GetComponent<Rigidbody2D>();
-        gravity = GetComponent<IrvinsGravityChange>();
+        //gravity = GetComponent<IrvinsGravityChange>();
     }
 
     // drag and drop
@@ -24,7 +24,7 @@ public class InteractiveObjControllerEdit : MonoBehaviour {
     }
 
     void Update () {
-        this.gravity.GravityChange();
+        //this.gravity.GravityChange();
 
     }
 }

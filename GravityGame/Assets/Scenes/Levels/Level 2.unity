@@ -3320,6 +3320,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1342846209}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &891258826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 754536215, guid: 9ac606ce5529b46819440dd90f2d6f2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2112009627}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4d87a3cc09c244ba0c3dac1dd81f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &900439951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8258,8 +8270,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198417982290257531, guid: 9ac606ce5529b46819440dd90f2d6f2b,
         type: 3}
+      propertyPath: exitTrigger.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198417982290257531, guid: 9ac606ce5529b46819440dd90f2d6f2b,
+        type: 3}
       propertyPath: levelToLoad
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 198417982290257531, guid: 9ac606ce5529b46819440dd90f2d6f2b,
+        type: 3}
+      propertyPath: exitTrigger.Array.data[0]
+      value: 
+      objectReference: {fileID: 891258826}
+    - target: {fileID: 754536215, guid: 9ac606ce5529b46819440dd90f2d6f2b, type: 3}
+      propertyPath: Exit
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ac606ce5529b46819440dd90f2d6f2b, type: 3}

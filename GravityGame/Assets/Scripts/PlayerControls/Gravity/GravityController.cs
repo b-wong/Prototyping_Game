@@ -7,8 +7,8 @@ using UnityEngine;
 
 public class GravityController : MonoBehaviour
 {
-    public static PlayerController player1;
-    public static PlayerController player2;
+    //public static PlayerController player1;
+    //public static PlayerController player2;
 
     PhysicsController physicsController;
 
@@ -47,9 +47,9 @@ public class GravityController : MonoBehaviour
         }
     }
 
-    public void ApplyGravity()
-    {
-       player1.m_rigidbody.AddForce(new Vector3(0, GravityForce1, 0), ForceMode.Acceleration);
-       player2.m_rigidbody.AddForce(new Vector3(0, GravityForce2, 0), ForceMode.Acceleration);
-    }
+    //public void ApplyGravity()
+    //{
+    //   player1.m_rigidbody.AddForce(new Vector3(0, GravityForce1, 0), ForceMode.Acceleration);
+    //   player2.m_rigidbody.AddForce(new Vector3(0, GravityForce2, 0), ForceMode.Acceleration);
+    //}
 }
