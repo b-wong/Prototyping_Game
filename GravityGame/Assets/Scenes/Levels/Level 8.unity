@@ -536,6 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5a36f28ca8fd74a87fdbe3144e121f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActiveButton: 0
   DoorInfluences:
   - {fileID: 617782256}
 --- !u!50 &104277810
@@ -877,6 +878,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0e82180fa771243979c2a0a0a55dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isButtonActive:
+  - {fileID: 104277809}
   isOpen: 0
   OpenPosition: {fileID: 746460136}
   ClosePosition: {fileID: 722249838}
