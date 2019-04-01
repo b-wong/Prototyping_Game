@@ -96,9 +96,6 @@ public class PlayerPlatformingController : PhysicsObject
             return;
         }
         */
- 
-        
-  
 
         Vector2 move = Vector2.zero;
 
