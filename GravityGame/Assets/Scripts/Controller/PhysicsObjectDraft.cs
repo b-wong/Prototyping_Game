@@ -116,7 +116,6 @@ public class PhysicsObjectDraft : MonoBehaviour
             { gravityDirection = gravityUp; }
             else if (gravityDirection == gravityUp)
             { gravityDirection = gravityDown; }
-
         }
     }
 }

@@ -5,31 +5,39 @@ using UnityEngine;
 public class PlayerPlatformingController : PhysicsObject
 {
 
+    #region Components
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
+    private PhysicsObject physObject;
+    #endregion Components
+
+
+    #region Speed modifiers
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
+    #endregion Speed modifiers
 
+    #region Input
     public string jumpButton = "Player1Jump";
     public string horizontalCtrl = "Player1Horizontal";
     public string freezeButton = "Player1Freeze";
     public string gravSwapButton = "Player1Grav";
+    #endregion Input
+
+    int cur_FacingDirection = 1;
 
     //public bool isFrozen = false;
 
-    private SpriteRenderer spriteRenderer;
-    private Animator animator;
 
-    private PhysicsObject physObject;
 
-    public static int numCollectable = 0;
-    GravityController gravityController;
+    public static int numCollectable = 0;           //GravityCharges
+    
 
     // Use this for initialization
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-
-        gravityController = GetComponent<GravityController>();
     }
 
     private void Start()
@@ -64,6 +72,10 @@ public class PlayerPlatformingController : PhysicsObject
         {
             numCollectable = numCollectable - 1;
             gravitySwapped = !gravitySwapped;
+
+            //causes all physics objects to invert gravity
+            Physics2D.gravity = -Physics2D.gravity;
+
         }
     }
 
@@ -94,7 +106,6 @@ public class PlayerPlatformingController : PhysicsObject
 
         if (Input.GetButtonDown(jumpButton) && grounded)
         {
-
             if (gravitySwapped == false)
             {
                 velocity.y = jumpTakeOffSpeed;
@@ -103,7 +114,6 @@ public class PlayerPlatformingController : PhysicsObject
             {
                 velocity.y = -jumpTakeOffSpeed;
             }
-
         }
 
         /*
@@ -130,6 +140,11 @@ public class PlayerPlatformingController : PhysicsObject
             move = Vector2.down * deltaPosition.y;
         }
         */
+
+        //changes the facing direction of the character
+        if (move.x > 0) cur_FacingDirection = 1;
+        else if (move.x < 0) cur_FacingDirection = -1;
+        transform.localScale = new Vector3(cur_FacingDirection, transform.localScale.y, transform.localScale.z);
 
         bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
         if (flipSprite)

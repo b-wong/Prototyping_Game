@@ -38,13 +38,6 @@ public class CharacterController : MonoBehaviour
     public float bufferLimit;
     float bufferCount;
 
-    // ----------------------------------------------
-    //public int numCollectable;
-
-    GravityController gravityController;
-    // ----------------------------------------------
-
-
     PhysicsController physicsController;
     private void Start()
     {
@@ -52,10 +45,6 @@ public class CharacterController : MonoBehaviour
 
         gravity = -(2 * jumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         jumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
-
-        // ----------------------------------------------
-        gravityController = GetComponent<GravityController>();
-        // ----------------------------------------------
     }
 
     private void Update()
@@ -175,14 +164,5 @@ public class CharacterController : MonoBehaviour
         dashingThroughTheSnow = false;
         canDash = false;
     }
-
-    //void PerformSwitch()
-    //{
-    //    if (numCollectable > 0)
-    //    {
-    //        gravityController.GravityInput();
-    //        gravityController.ApplyGravity();
-    //    }
-    //}
 }
 

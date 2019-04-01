@@ -2719,7 +2719,7 @@ PrefabInstance:
         type: 3}
       propertyPath: isButtonActive.Array.data[0]
       value: 
-      objectReference: {fileID: 158633892}
+      objectReference: {fileID: 104277809}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6486c2e104173064894d87433a1fea8a, type: 3}
 --- !u!1001 &5524546248862181377
@@ -2811,7 +2811,7 @@ PrefabInstance:
     - target: {fileID: 5620052604376315727, guid: bf7d02bce348f074fb2112e3b1f12332,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 5620052604376315727, guid: bf7d02bce348f074fb2112e3b1f12332,
         type: 3}
@@ -2862,6 +2862,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710172952711516838, guid: bf7d02bce348f074fb2112e3b1f12332,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710172952711516838, guid: bf7d02bce348f074fb2112e3b1f12332,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710172951313540659, guid: bf7d02bce348f074fb2112e3b1f12332,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf7d02bce348f074fb2112e3b1f12332, type: 3}

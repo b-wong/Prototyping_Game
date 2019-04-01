@@ -6,15 +6,17 @@ public class PhysicsObject : MonoBehaviour
 {
 
     public float minGroundNormalY = .65f;
+    
+    #region GravityModifiers
     public float gravityModifier = 1f;
-
-
 
     Vector2 gravityUp = new Vector2(0, 9.8f);
     Vector2 gravityDown = new Vector2(0, -9.8f);
     Vector2 gravityDirection = new Vector2(0, -9.8f);
     public bool gravitySwapped = false;
     public bool isFrozen = true;
+    #endregion GravityModifiers
+
 
     protected Vector2 targetVelocity;
     protected bool grounded;
@@ -68,14 +70,7 @@ public class PhysicsObject : MonoBehaviour
 
         //gravity swap
 
-        if (gravitySwapped == false || isFrozen == true)
-        {
-            gravityDirection = gravityDown;
-        }
-        else if (gravitySwapped == true)
-        {
-            gravityDirection = gravityUp;
-        }
+        GravitySwap();
 
         /*foreach (PhysicsObject item in PhysicsManager.instance.physicsObjects)
         {
@@ -105,6 +100,18 @@ public class PhysicsObject : MonoBehaviour
         Movement(move, true);
 
 
+    }
+
+    void GravitySwap()
+    {
+        if (gravitySwapped == false || isFrozen == true)
+        {
+            gravityDirection = gravityDown;
+        }
+        else if (gravitySwapped == true)
+        {
+            gravityDirection = gravityUp;
+        }
     }
 
     void Movement(Vector2 move, bool yMovement)

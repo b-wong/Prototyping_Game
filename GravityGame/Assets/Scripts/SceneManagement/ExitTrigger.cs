@@ -18,7 +18,13 @@ public class ExitTrigger : MonoBehaviour
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    private void Start()
+    {
+        ColorSwapper();   
+    }
+
+    //ChangesColor based on whose exit this belongs to
+    void ColorSwapper()
     {
         Color m_color;
 
@@ -50,8 +56,6 @@ public class ExitTrigger : MonoBehaviour
             if (collision.tag == "Player1" || collision.tag == "Player2")
                 isTriggerActive = true;
         }
-            
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)

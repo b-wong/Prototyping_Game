@@ -14,7 +14,6 @@ public class LoadNextLevel : MonoBehaviour
     {
         if (checkIfExitsOccupied())
             SceneManager.LoadScene(levelToLoad);
-        
     }
 
     bool checkIfExitsOccupied()
@@ -26,25 +25,4 @@ public class LoadNextLevel : MonoBehaviour
         }
         return true;
     }
-
-
-    //void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player1" || collision.gameObject.tag == "Player2")
-    //    {
-    //        SceneManager.LoadScene(levelToLoad);
-    //    }
-    //}
 }
-
-//[CustomEditor(typeof(LoadNextLevel))]
-//public class LoadNextLevelEditor : Editor
-//{
-//    void OnInspectorGUI()
-//    {
-//        var loadNextLevel = target as LoadNextLevel;
-
-        
-
-//    }
-//}

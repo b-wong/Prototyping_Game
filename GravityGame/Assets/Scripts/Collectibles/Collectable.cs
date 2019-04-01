@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    void Awake()
-    {
-
-    }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
@@ -16,7 +12,6 @@ public class Collectable : MonoBehaviour
             PlayerPlatformingController.numCollectable = PlayerPlatformingController.numCollectable + 1;
 
             Destroy(gameObject);
-            //Debug.Log(characterController.numCollectable);
         }
     }
 }
