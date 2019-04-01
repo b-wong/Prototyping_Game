@@ -53,6 +53,7 @@ public class DoorController : MonoBehaviour
     }
 
     #region DoorMechanism
+
     IEnumerator OpenDoorMechanism(float TimeToMove)
     {
         float timer = 0;
