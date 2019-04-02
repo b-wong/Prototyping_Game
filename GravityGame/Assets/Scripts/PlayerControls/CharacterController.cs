@@ -39,6 +39,17 @@ public class CharacterController : MonoBehaviour
     float bufferCount;
 
     PhysicsController physicsController;
+
+    private void OnEnable()
+    {
+        SpikeHazard.onDeath += OnDeath;
+    }
+
+    private void OnDisable()
+    {
+        SpikeHazard.onDeath += OnDeath;
+    }
+
     private void Start()
     {
         physicsController = GetComponent<PhysicsController>();
@@ -163,6 +174,12 @@ public class CharacterController : MonoBehaviour
         }
         dashingThroughTheSnow = false;
         canDash = false;
+    }
+
+
+    void OnDeath()
+    {
+        Debug.Log("Im ded");
     }
 }
 

@@ -18,7 +18,6 @@ public class GrabObject : MonoBehaviour
     //time of pickup and dropping item
     private float timeOfPickup, timeOfDrop;
     
-    
 
     private void Start()
     {
@@ -65,6 +64,17 @@ public class GrabObject : MonoBehaviour
         objectHolding = null;
 
         timeOfDrop = Time.time;
+    }
+
+    public void OnDeath()
+    {
+        if (objectHolding != null)
+        {
+            objectHolding.GetComponent<CarryableObjectSpawner>().RespawnObject();
+            objectHolding.GetComponent<Rigidbody2D>().simulated = true;
+            objectHolding.transform.parent = null;
+            objectHolding = null;
+        }
     }
 
 }
