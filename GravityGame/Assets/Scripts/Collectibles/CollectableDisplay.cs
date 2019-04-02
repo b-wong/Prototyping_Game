@@ -16,6 +16,7 @@ public class CollectableDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textUI.text = PlayerPlatformingController.numCollectable.ToString();
+        //textUI.text = PlayerPlatformingController.numCollectable.ToString("Gravity Charges: ");
+        textUI.text = string.Format("Gravity Charges: {0}", PlayerPlatformingController.numCollectable);
     }
 }

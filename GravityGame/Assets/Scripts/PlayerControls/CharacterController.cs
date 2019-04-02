@@ -42,12 +42,12 @@ public class CharacterController : MonoBehaviour
 
     private void OnEnable()
     {
-        SpikeHazard.onDeath += OnDeath;
+        //SpikeHazard.onDeath += OnDeath;
     }
 
     private void OnDisable()
     {
-        SpikeHazard.onDeath += OnDeath;
+        //SpikeHazard.onDeath += OnDeath;
     }
 
     private void Start()

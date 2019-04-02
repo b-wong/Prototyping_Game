@@ -54,7 +54,7 @@ public class PlayerPlatformingController : PhysicsObject
     private void InputHandling()
     {
         if (Input.GetButtonDown(freezeButton))
-        {
+        {  
             isFrozen = !isFrozen;
         }
 
