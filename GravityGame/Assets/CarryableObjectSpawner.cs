@@ -6,6 +6,17 @@ public class CarryableObjectSpawner : MonoBehaviour
 {
     Vector3 originalPos;
 
+    private void OnEnable()
+    {
+        
+    }
+
+    private void OnDisable()
+    {
+        
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
