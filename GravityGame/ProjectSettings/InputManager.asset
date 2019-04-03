@@ -329,8 +329,8 @@ InputManager:
     m_Name: Player2Horizontal
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: '[4]'
-    positiveButton: '[6]'
+    negativeButton: left
+    positiveButton: right
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -362,9 +362,9 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: '[8]'
+    positiveButton: up
     altNegativeButton: 
-    altPositiveButton: right
+    altPositiveButton: down
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -394,7 +394,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: enter
+    positiveButton: right shift
     altNegativeButton: 
     altPositiveButton: '[0]'
     gravity: 1000
@@ -458,7 +458,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: '[.]'
+    positiveButton: /
     altNegativeButton: 
     altPositiveButton: '[1]'
     gravity: 1000

@@ -30,15 +30,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level 7.unity
     guid: 729fde4989b50644883ba914383cd429
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 8.unity
-    guid: dd24142d7b405d142a7ec4020c0d8694
+    path: Assets/Scenes/Levels/Level 8 (FreezeChallenge).unity
+    guid: 7b13c564e908c4476a9316d5815feaf3
   - enabled: 1
     path: Assets/Scenes/Levels/Level 9.unity
+    guid: dd24142d7b405d142a7ec4020c0d8694
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 10.unity
     guid: d6edaca1c3ff8db46b5dbdf764112331
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Levels/LevelTest.unity
-    guid: 7b13c564e908c4476a9316d5815feaf3
   m_configObjects: {}
