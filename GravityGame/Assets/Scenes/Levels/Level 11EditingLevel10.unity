@@ -4953,22 +4953,22 @@ PrefabInstance:
         type: 3}
       propertyPath: player1
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 778766509}
     - target: {fileID: 2406078687170629182, guid: 56a7d5ce69e08a249b9e2c294f0d5322,
         type: 3}
       propertyPath: player2
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 904165688}
     - target: {fileID: 2406078687170629182, guid: 56a7d5ce69e08a249b9e2c294f0d5322,
         type: 3}
       propertyPath: player1RespawnPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 745034933}
     - target: {fileID: 2406078687170629182, guid: 56a7d5ce69e08a249b9e2c294f0d5322,
         type: 3}
       propertyPath: player2RespawnPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 778104191}
     - target: {fileID: 2406078687170629180, guid: 56a7d5ce69e08a249b9e2c294f0d5322,
         type: 3}
       propertyPath: m_SortingLayerID
