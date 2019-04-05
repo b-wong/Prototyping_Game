@@ -10,21 +10,21 @@ public class OnKeyUpTimer : MonoBehaviour
     //public string gravSwapButton = "Player1Grav";
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyUp("Player1Jump"))
-        {
-            Debug.Log("Space key was released");
-        }
+    //void Update()
+    //{
+    //    if (Input.GetKeyUp("Player1Jump"))
+    //    {
+    //        Debug.Log("Space key was released");
+    //    }
 
 
 
 
-    }
+    //}
 
-    void StartTimer()
-    {
+    //void StartTimer()
+    //{
 
-    }
+    //}
 
 }
