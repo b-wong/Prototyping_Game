@@ -95,12 +95,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
-  gravityModifier: 5
+  gravityModifier: 8.5
   gravitySwapped: 0
   isFrozen: 0
   velocity: {x: 0, y: 0}
   maxSpeed: 7
-  jumpTakeOffSpeed: 16
+  jumpTakeOffSpeed: 22.75
   jumpButton: Player2Jump
   horizontalCtrl: Player2Horizontal
   freezeButton: Player2Freeze

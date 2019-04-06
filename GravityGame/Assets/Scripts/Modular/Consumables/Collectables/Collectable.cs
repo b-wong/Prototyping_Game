@@ -9,7 +9,8 @@ public class Collectable : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player1" || collider.gameObject.tag == "Player2"){
         
-            PlayerPlatformingController.numCollectable = PlayerPlatformingController.numCollectable + 1;
+            //PlayerPlatformingController.numCollectable = PlayerPlatformingController.numCollectable + 1;
+            GameManager.instance.gravitySwapCharges = GameManager.instance.gravitySwapCharges + 1;
 
             Destroy(gameObject);
         }

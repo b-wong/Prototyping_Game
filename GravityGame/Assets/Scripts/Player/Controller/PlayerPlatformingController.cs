@@ -68,9 +68,9 @@ public class PlayerPlatformingController : PhysicsObject
 
     private void TryUseCollectable()
     {
-        if (numCollectable > 0)
+        if (GameManager.instance.gravitySwapCharges > 0)
         {
-            numCollectable = numCollectable - 1;
+            GameManager.instance.gravitySwapCharges = GameManager.instance.gravitySwapCharges - 1;
             gravitySwapped = !gravitySwapped;
 
             //causes all physics objects to invert gravity

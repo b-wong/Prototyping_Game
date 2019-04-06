@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyControls : MonoBehaviour {
+    /*
     public float moveSpeed; // the rotation of the enemy
     public float distance;      // the distance of enemy's sight
     Rigidbody2D enemyRigidbody; // enemy's rigidbody
@@ -45,4 +46,5 @@ public class EnemyControls : MonoBehaviour {
         if (collider.tag == "Player")
             getScript.EnemyPlayerDetected();
     }
+    */
 }

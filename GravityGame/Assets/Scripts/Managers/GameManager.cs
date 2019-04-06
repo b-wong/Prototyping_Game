@@ -4,97 +4,69 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour {
-    public Text stateText;
-    public string stateWords1;
-    public string stateWords2;
-    bool fail = false;
-    bool fall = false;
-    bool succeed = false;
+public class GameManager : MonoBehaviour
+{
 
-    public GameObject canvas;
-    public GameObject warning;
-    public GameObject fallOff;
+    public int scoreFromScene = 0;
+    public int totalScore = 0;
+    public int gravitySwapCharges = 0;
 
-    public void Start()
+    // add score from scene to total score at end of scene. Reset scoreFromScene to 0 on scene reset or loading of next scene. String should show totalscore + scoreFromScene
+
+    // Singleton pattern
+    public static GameManager instance = null;
+    private void Awake()
     {
-        canvas.gameObject.SetActive(false);
-    }
-
-    public void UpdateHUD()
-    {
-        // Tell Game which state the game is in
-        if (fail == true)
+        if (instance == null)
         {
-            // flash exclamation points at player then have go to game over scene
-            canvas.gameObject.SetActive(true);
-            stateText.text = stateWords1.ToString();
+            instance = this;
         }
-        if (succeed == true)
+        else if (instance != this)
         {
-            // Show player the win screen
-            canvas.gameObject.SetActive(true);
-            stateText.text = stateWords2.ToString();
+            Destroy(gameObject);
         }
-        if (fall == true)
+        DontDestroyOnLoad(gameObject);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        ExitApplication();
+        ReloadCurrentScene();
+    }
+
+    void ExitApplication()
+    {
+        if (Input.GetButtonDown("Exit"))
         {
-            canvas.gameObject.SetActive(true);
-            stateText.text = stateWords1.ToString();
-
+            Application.Quit();
         }
     }
 
-    public void WinGame()
+    // Reset the current level and gravity swap charges.
+    void ReloadCurrentScene()
     {
-        succeed = true;
-        UpdateHUD();
-    }
-
-    public void EnemyPlayerDetected()
-    {
-        fail = true;
-        StartFlashing();
-    }
-
-    public void StartFlashing()
-    {
-        StopAllCoroutines();
-        StartCoroutine("GameOver");
-    }
-
-    void StopBlinking()
-    {
-        StopAllCoroutines();
-    }
-
-    public IEnumerator GameOver()
-    {
-        while (true)
+        if (Input.GetButtonDown("ReloadScene"))
         {
-            GameObject detected = Instantiate(warning, new Vector3(0, 0, 0), Quaternion.identity);
-            Destroy(detected, 0.5f);
-            yield return new WaitForSeconds(1f);
-            UpdateHUD();
-            break;
+            scoreFromScene = 0;
+            gravitySwapCharges = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-
-
     }
 
-    public void FallOff()
+    // Loads the next scene in the build index.
+    void LoadNextScene()
     {
-        fall = true;
-        UpdateHUD();
+        scoreFromScene = 0;
+        totalScore = totalScore + scoreFromScene;
+        gravitySwapCharges = 0;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-
-    public void GameLevel ()
+    void AddScore()
     {
-        SceneManager.LoadScene("Game", LoadSceneMode.Single);
+
     }
 
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
+
 }
