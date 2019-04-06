@@ -10881,12 +10881,12 @@ PrefabInstance:
     - target: {fileID: 5139360308697641200, guid: 08d000744088342f8bbecfc584314390,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.9132237
+      value: -1.08
       objectReference: {fileID: 0}
     - target: {fileID: 5139360308697641200, guid: 08d000744088342f8bbecfc584314390,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.193576
+      value: -5.96
       objectReference: {fileID: 0}
     - target: {fileID: 5139360308697641200, guid: 08d000744088342f8bbecfc584314390,
         type: 3}
@@ -10932,6 +10932,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139360308697641207, guid: 08d000744088342f8bbecfc584314390,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139360308697641207, guid: 08d000744088342f8bbecfc584314390,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139360308697641207, guid: 08d000744088342f8bbecfc584314390,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210639240033157738, guid: 08d000744088342f8bbecfc584314390,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08d000744088342f8bbecfc584314390, type: 3}
