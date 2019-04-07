@@ -24,14 +24,8 @@ public class PlayerPlatformingController : PhysicsObject
     public string gravSwapButton = "Player1Grav";
     #endregion Input
 
-    int cur_FacingDirection = 1;
-
-    //public bool isFrozen = false;
-
-
-
     public static int numCollectable = 0;           //GravityCharges
-    
+
 
     // Use this for initialization
     void Awake()
@@ -49,12 +43,13 @@ public class PlayerPlatformingController : PhysicsObject
     {
         base.Update();
         InputHandling();
+
     }
 
     private void InputHandling()
     {
         if (Input.GetButtonDown(freezeButton))
-        {  
+        {
             isFrozen = !isFrozen;
         }
 
@@ -81,21 +76,6 @@ public class PlayerPlatformingController : PhysicsObject
 
     protected override void ComputeVelocity()
     {
-        /*
-        if (Input.GetButtonDown(freezeButton) && isFrozen == false)
-        {
-            isFrozen = true;
-        }
-        else if (Input.GetButtonDown(freezeButton) && isFrozen == true)
-        {
-            isFrozen = false;
-        }
-        if (isFrozen == true)
-        {
-
-            return;
-        }
-        */
 
         Vector2 move = Vector2.zero;
 
@@ -103,6 +83,9 @@ public class PlayerPlatformingController : PhysicsObject
 
         if (Input.GetButtonDown(jumpButton) && grounded)
         {
+
+
+            // Reverse direction of jump force according to gravity swap direction.
             if (gravitySwapped == false)
             {
                 velocity.y = jumpTakeOffSpeed;
@@ -113,44 +96,30 @@ public class PlayerPlatformingController : PhysicsObject
             }
         }
 
-        /*
-        if (Input.GetButtonDown(jumpButton) && grounded)
+        // Flip sprite facing direction.
+        if (move.x > 0.01f)
         {
-            velocity.y = jumpTakeOffSpeed;
+            spriteRenderer.flipX = true;
         }
-        else if (Input.GetButtonUp(jumpButton))
+        else if (move.x < -0.01f)
         {
-            if (velocity.y > 0)
-            {
-                velocity.y = velocity.y * 0.5f;
-            }
+            spriteRenderer.flipX = false;
         }
-        */
-
-        /*
-        if (gravitySwapped == false)
+        // Flip sprite on Y axis according to grav swap direction.
+        if (gravitySwapped == true)
         {
-            move = Vector2.up * deltaPosition.y;
+            spriteRenderer.flipY = true;
         }
-        else if (gravitySwapped == true)
+        else if (gravitySwapped == false)
         {
-            move = Vector2.down * deltaPosition.y;
-        }
-        */
-
-        //changes the facing direction of the character
-        if (move.x > 0) cur_FacingDirection = 1;
-        else if (move.x < 0) cur_FacingDirection = -1;
-        transform.localScale = new Vector3(cur_FacingDirection, transform.localScale.y, transform.localScale.z);
-
-        bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
-        if (flipSprite)
-        {
-            spriteRenderer.flipX = !spriteRenderer.flipX;
+            spriteRenderer.flipY = false;
         }
 
-        //animator.SetBool("grounded", grounded);
-        //animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+
+
+        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+        animator.SetBool("grounded", grounded);
+        animator.SetBool("isFrozen", isFrozen);
 
         targetVelocity = move * maxSpeed;
     }
