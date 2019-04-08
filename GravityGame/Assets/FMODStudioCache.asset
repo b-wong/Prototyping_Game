@@ -12,9 +12,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
-  MasterBanks: []
-  StringsBanks: []
-  stringsBankWriteTime: 0
+  EditorBanks:
+  - {fileID: 114612618912767556}
+  - {fileID: 114985390044925844}
+  EditorEvents:
+  - {fileID: 114476260775436898}
+  MasterBanks:
+  - {fileID: 114985390044925844}
+  StringsBanks:
+  - {fileID: 114612618912767556}
+  stringsBankWriteTime: 636902513379770991
   cacheVersion: 3
+--- !u!114 &114476260775436898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Exit_Idle
+  guid: 72fb45ad9c48e74294eb821b259be1a4
+  Banks:
+  - {fileID: 114985390044925844}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 113000
+--- !u!114 &114612618912767556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: FmodProject\VivianDreams\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636902513379770991
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 720
+  Exists: 1
+--- !u!114 &114985390044925844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Squeebo\Documents\GitHub\Prototyping_Game\GravityGame\FmodProject\VivianDreams\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636902513379711054
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1447840
+  Exists: 1

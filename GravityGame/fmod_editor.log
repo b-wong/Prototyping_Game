@@ -16,6 +16,58 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F03EB78
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F03E668
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F03E668
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F03EB78
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F03E668
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F03E668
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F03EB78
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F03E668
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F03E668
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004F03EB78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004F03EB78
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] SoundI::release                          : Exit_Idle (000000004F03E818)
+[LOG] SoundI::release                          :     Exit_Idle (00000000536F0868)
+[LOG] SoundI::release                          :     Exit_Idle (000000004F03E668)
+[LOG] SoundI::release                          : Exit_Idle (000000004F03D738)
+[LOG] SoundI::release                          :     Exit_Idle (00000000536F0D48)
+[LOG] SoundI::release                          :     Exit_Idle (000000004F03EB78)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
