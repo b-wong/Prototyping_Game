@@ -24,7 +24,7 @@ public class TimeSinceSceneLoad : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Time.timeSinceLevelLoad" + Time.timeSinceLevelLoad);
+        //Debug.Log("Time.timeSinceLevelLoad" + Time.timeSinceLevelLoad);
         //Output the time since the level loaded to the screen using this label
         m_MyText.text = "Time Since Loaded : " + Time.timeSinceLevelLoad;
     }
@@ -33,7 +33,7 @@ public class TimeSinceSceneLoad : MonoBehaviour
     {
         //Press this Button to load another Scene
         //Load the Scene named "Scene2"
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Scn_Cathr2");
     }
 
 

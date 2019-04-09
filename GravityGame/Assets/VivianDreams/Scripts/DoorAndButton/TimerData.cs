@@ -5,13 +5,18 @@ using UnityEngine;
 [System.Serializable]
 public class TimerData
 {
-    [SerializeField]
-    private List<float> m_timeSinceLevelLoad = new List<float>();
+    public string date = "";
+    public string time = "";
 
-    public void AddData(float timeSinceLevelLoad)
-    {
-        m_timeSinceLevelLoad.Add(timeSinceLevelLoad);
-    }
+    public float sceneLength;
+
+    //[SerializeField]
+    //private List<float> m_timeSinceLevelLoad = new List<float>();
+
+    //public void AddData(float timeSinceLevelLoad)
+    //{
+    //    m_timeSinceLevelLoad.Add(timeSinceLevelLoad);
+    //}
 
 }
 
