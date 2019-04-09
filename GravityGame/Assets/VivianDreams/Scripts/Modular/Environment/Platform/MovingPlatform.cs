@@ -12,9 +12,12 @@ public class MovingPlatform : MonoBehaviour, IToggleable
     public float PauseDuration;
     private bool pausePlatform = false;
 
+    Rigidbody2D body;
+
     private void Start()
     {
         Vector3[] waypoints = new Vector3[pathHolder.childCount];
+        body = GetComponent<Rigidbody2D>();
         for(int i = 0; i < waypoints.Length; i++)
         {
             waypoints[i] = pathHolder.GetChild(i).position;
@@ -35,7 +38,11 @@ public class MovingPlatform : MonoBehaviour, IToggleable
         {
             if (!pausePlatform)
             {
-                transform.position = Vector3.MoveTowards(transform.position, targetWayPoint, speed * Time.deltaTime);
+                Vector3 step = Vector3.ClampMagnitude(targetWayPoint - transform.position, speed * Time.deltaTime);
+
+                //transform.position += step;
+                body.velocity = step / Time.deltaTime;
+
                 if (transform.position == targetWayPoint)
                 {
                     targetWayPointIndex = (targetWayPointIndex + 1) % waypoints.Length;

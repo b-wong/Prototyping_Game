@@ -18,6 +18,8 @@ public class PhysicsObject : MonoBehaviour
     #endregion GravityModifiers
 
 
+    public Rigidbody2D relativeTo;
+
     protected Vector2 targetVelocity;
     protected bool grounded;
     protected Vector2 groundNormal;
@@ -85,6 +87,9 @@ public class PhysicsObject : MonoBehaviour
         velocity += gravityModifier * gravityDirection * Time.deltaTime;
         velocity.x = targetVelocity.x;
 
+        if (relativeTo != null)
+            velocity.x += relativeTo.velocity.x;
+
         grounded = false;
 
         Vector2 deltaPosition = velocity * Time.deltaTime;
@@ -98,8 +103,6 @@ public class PhysicsObject : MonoBehaviour
         move = Vector2.up * deltaPosition.y;
 
         Movement(move, true);
-
-
     }
 
     void GravitySwap()

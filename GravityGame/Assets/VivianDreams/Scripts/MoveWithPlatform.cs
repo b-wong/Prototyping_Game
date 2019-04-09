@@ -4,28 +4,43 @@ using UnityEngine;
 
 public class MoveWithPlatform : MonoBehaviour
 {
+
+    [SerializeField]
     GameObject playerHolder;
+
+    PhysicsObject physics;
 
 
     private void Awake()
     {
         playerHolder = GameObject.FindWithTag("PlayerHolder");
+        physics = GetComponent<PhysicsObject>();
     }
 
-
-    private void OnTriggerStay2D(Collider2D collision)
+ 
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "MovingPlatform")
+        //Debug.LogFormat("Collision {0} {1} {2}", collision.otherCollider.tag, collision.collider.tag, collision.contacts[0].normal);
+
+        if (collision.collider.CompareTag("MovingPlatform") && collision.contacts[0].normal.y > 0.7f)
         {
-            gameObject.transform.parent.SetParent(collision.gameObject.transform);
+            if (physics == null)
+            {
+                gameObject.transform.parent.SetParent(collision.gameObject.transform);
+            } else
+            {
+                physics.relativeTo = collision.rigidbody;
+            }
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.tag == "MovingPlatform")
+        if (other.collider.CompareTag("MovingPlatform"))
         {
             gameObject.transform.parent.SetParent(playerHolder.transform);
+            if (physics != null)
+                physics.relativeTo = null;
         }
     }
 

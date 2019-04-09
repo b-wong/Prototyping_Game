@@ -161,12 +161,11 @@ public class PlayerPlatformingController : PhysicsObject
         }
 
 
-
-        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
-        animator.SetBool("grounded", grounded);
-        animator.SetBool("isFrozen", isFrozen);
-
         targetVelocity = move * maxSpeed;
+
+        animator.SetFloat("velocityX", Mathf.Abs(targetVelocity.x) / maxSpeed);
+        animator.SetBool("grounded", grounded);
+        animator.SetBool("isFrozen", isFrozen);        
     }
 
 }
