@@ -8,7 +8,8 @@ public class TimerData
     public string date = "";
     public string time = "";
 
-    public float sceneLength;
+    //public float sceneLength;
+    public string sceneLength = "";
 
     //[SerializeField]
     //private List<float> m_timeSinceLevelLoad = new List<float>();

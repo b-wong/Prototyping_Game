@@ -19,7 +19,7 @@ public class LoadNextLevel : MonoBehaviour
         {
             //Debug.Log("got in LoadNextLevel script's checkIfExitsOccupied");
             //trying make JSON save work
-           // timeTrackerScript.OnSceneClose();
+            //timeTrackerScript.OnSceneClose();
           
             SceneManager.LoadScene(levelToLoad);
         }

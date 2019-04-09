@@ -3872,7 +3872,7 @@ PrefabInstance:
     - target: {fileID: 405175084495057517, guid: 0c06ac2b448623f40b1ce805302def4c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.13
+      value: 7.16
       objectReference: {fileID: 0}
     - target: {fileID: 405175084495057517, guid: 0c06ac2b448623f40b1ce805302def4c,
         type: 3}
@@ -3922,6 +3922,17 @@ PrefabInstance:
     - target: {fileID: 405175084495057517, guid: 0c06ac2b448623f40b1ce805302def4c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405175084495057518, guid: 0c06ac2b448623f40b1ce805302def4c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f9f0a269456059e478d01271b4a0db7a,
+        type: 3}
+    - target: {fileID: 405175084495057518, guid: 0c06ac2b448623f40b1ce805302def4c,
+        type: 3}
+      propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4471317313794206831, guid: 0c06ac2b448623f40b1ce805302def4c,
@@ -6688,16 +6699,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorTrigger (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
-        type: 3}
-      propertyPath: DoorInfluences.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
-        type: 3}
-      propertyPath: DoorInfluences.Array.data[0]
-      value: 
-      objectReference: {fileID: 1775601573}
     - target: {fileID: 6313852319492082855, guid: 05ffb14f6ee1eba40a121309b9aa3038,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6773,6 +6774,16 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
+        type: 3}
+      propertyPath: DoorInfluences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
+        type: 3}
+      propertyPath: DoorInfluences.Array.data[0]
+      value: 
+      objectReference: {fileID: 1775601573}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05ffb14f6ee1eba40a121309b9aa3038, type: 3}
 --- !u!1001 &1357002837
@@ -11000,12 +11011,12 @@ PrefabInstance:
     - target: {fileID: 3735549052844946499, guid: 298bdd4fd0de4124da8bd7d8b6edf70f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.54
+      value: 5.79
       objectReference: {fileID: 0}
     - target: {fileID: 3735549052844946499, guid: 298bdd4fd0de4124da8bd7d8b6edf70f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.52
+      value: -6.631
       objectReference: {fileID: 0}
     - target: {fileID: 3735549052844946499, guid: 298bdd4fd0de4124da8bd7d8b6edf70f,
         type: 3}
@@ -11051,6 +11062,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735549052844946498, guid: 298bdd4fd0de4124da8bd7d8b6edf70f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f9f0a269456059e478d01271b4a0db7a,
+        type: 3}
+    - target: {fileID: 3735549052844946526, guid: 298bdd4fd0de4124da8bd7d8b6edf70f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735549052844946526, guid: 298bdd4fd0de4124da8bd7d8b6edf70f,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.01
       objectReference: {fileID: 0}
     - target: {fileID: 4833388684031438543, guid: 298bdd4fd0de4124da8bd7d8b6edf70f,
         type: 3}
@@ -11900,6 +11927,43 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1860682119}
   m_PrefabAsset: {fileID: 0}
+--- !u!60 &1976350180
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976350178}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.75, y: 2.01}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.099725485, y: 0.112802505}
+      - {x: 0.48499998, y: 0.73499995}
+      - {x: -0.185, y: 0.835}
+      - {x: -0.525, y: 0.745}
+      - {x: -0.27037024, y: 0.21571112}
+      - {x: -0.195, y: -0.225}
+      - {x: -0.26451063, y: -0.5360427}
+      - {x: -0.20770311, y: -0.86510897}
+      - {x: 0.05076933, y: -0.86510944}
+    - - {x: -0.20067286, y: -0.64044285}
+      - {x: -0.017365694, y: -0.47659874}
+      - {x: -0.042553186, y: 0.2938776}
 --- !u!1 &1991452234
 GameObject:
   m_ObjectHideFlags: 0
@@ -13118,25 +13182,25 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.15566039
       objectReference: {fileID: 0}
-    - target: {fileID: 4134520326396725077, guid: 6486c2e104173064894d87433a1fea8a,
+    - target: {fileID: 4134520326257037139, guid: 6486c2e104173064894d87433a1fea8a,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_LocalPosition.x
+      value: 3.37
       objectReference: {fileID: 0}
     - target: {fileID: 4134520326396725076, guid: 6486c2e104173064894d87433a1fea8a,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4134520326257037139, guid: 6486c2e104173064894d87433a1fea8a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.37
-      objectReference: {fileID: 0}
     - target: {fileID: 4134520326276805845, guid: 6486c2e104173064894d87433a1fea8a,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134520326396725077, guid: 6486c2e104173064894d87433a1fea8a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6486c2e104173064894d87433a1fea8a, type: 3}
@@ -13330,16 +13394,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorTrigger
       objectReference: {fileID: 0}
-    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
-        type: 3}
-      propertyPath: DoorInfluences.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
-        type: 3}
-      propertyPath: DoorInfluences.Array.data[0]
-      value: 
-      objectReference: {fileID: 888036612}
     - target: {fileID: 6313852319492082855, guid: 05ffb14f6ee1eba40a121309b9aa3038,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13415,5 +13469,15 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
+        type: 3}
+      propertyPath: DoorInfluences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
+        type: 3}
+      propertyPath: DoorInfluences.Array.data[0]
+      value: 
+      objectReference: {fileID: 888036612}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05ffb14f6ee1eba40a121309b9aa3038, type: 3}

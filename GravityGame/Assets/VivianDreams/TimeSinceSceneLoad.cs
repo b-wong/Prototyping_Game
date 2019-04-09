@@ -14,6 +14,8 @@ public class TimeSinceSceneLoad : MonoBehaviour
     {
         //Don't destroy the GameObject when loading a new Scene
         DontDestroyOnLoad(gameObject);
+        // or DontDestroyOnLoad(this); ?
+
         //Make sure the Canvas isn't deleted so the UI stays on the Scene load
         DontDestroyOnLoad(GameObject.Find("Canvas"));
 
@@ -23,7 +25,7 @@ public class TimeSinceSceneLoad : MonoBehaviour
     }
 
     void Update()
-    {
+    {      
         //Debug.Log("Time.timeSinceLevelLoad" + Time.timeSinceLevelLoad);
         //Output the time since the level loaded to the screen using this label
         m_MyText.text = "Time Since Loaded : " + Time.timeSinceLevelLoad;
@@ -35,6 +37,4 @@ public class TimeSinceSceneLoad : MonoBehaviour
         //Load the Scene named "Scene2"
         SceneManager.LoadScene("Scn_Cathr2");
     }
-
-
 }
