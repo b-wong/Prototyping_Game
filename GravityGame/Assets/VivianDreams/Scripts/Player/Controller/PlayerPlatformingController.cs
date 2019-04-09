@@ -118,13 +118,15 @@ public class PlayerPlatformingController : PhysicsObject
 
         Vector2 move = Vector2.zero;
 
-        move.x = Input.GetAxis(horizontalCtrl);                     //keyboard input
-        move.x = Input.GetAxis(playerNumber + horizontalAxis);      //controller input
+        if (Input.GetAxis(horizontalCtrl) != 0)
+            move.x = Input.GetAxis(horizontalCtrl);                     //keyboard input
+        if (Input.GetAxis(playerNumber + horizontalAxis) != 0)
+            move.x = Input.GetAxis(playerNumber + horizontalAxis);      //controller input
 
         bool jumpButtonCheck = Input.GetButtonDown(jumpButton);
         float jumpAxisCheck = Input.GetAxis(playerNumber + jumpAxis);
         
-        if (jumpButtonCheck || jumpAxisCheck > 0 && grounded)
+        if ((jumpButtonCheck || jumpAxisCheck > 0) && grounded)
         {
 
 

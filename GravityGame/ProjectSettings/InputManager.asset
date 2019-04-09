@@ -634,7 +634,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: escape
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -642,7 +642,7 @@ InputManager:
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 0
+    type: 2
     axis: 5
     joyNum: 1
   - serializedVersion: 3
@@ -650,7 +650,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: escape
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -658,9 +658,9 @@ InputManager:
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 0
+    type: 2
     axis: 5
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: Player1PositionSwap
     descriptiveName: 
