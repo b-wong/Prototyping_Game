@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class PlayerPlatformingController : PhysicsObject
 {
+    public int playerNumber;
+
 
     #region Components
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private PhysicsObject physObject;
+
+    [SerializeField]
+    private PositionSwapper m_positionSwapper;
+
     #endregion Components
 
 
@@ -17,11 +23,27 @@ public class PlayerPlatformingController : PhysicsObject
     public float jumpTakeOffSpeed = 7;
     #endregion Speed modifiers
 
+
+
+    bool canFreeze = true;
+    bool canGravSwap = true;
+    bool canSwapPos = true;
+    
+
     #region Input
     public string jumpButton = "Player1Jump";
     public string horizontalCtrl = "Player1Horizontal";
     public string freezeButton = "Player1Freeze";
     public string gravSwapButton = "Player1Grav";
+    public string positionSwapButton = "Player1PositionSwap";
+
+    //Controller Input
+    private string horizontalAxis = "_axis_horizontal_ctrl";
+    private string jumpAxis = "_jump_ctrl";
+    private string freezeAxis = "_freeze_ctrl";
+    private string gravAxis = "_grav_ctrl";
+    private string positionSwapAxis = "_positionSwap_ctrl";
+
     #endregion Input
 
     public static int numCollectable = 0;           //GravityCharges
@@ -30,12 +52,14 @@ public class PlayerPlatformingController : PhysicsObject
     // Use this for initialization
     void Awake()
     {
+        m_positionSwapper = GameObject.FindWithTag("PositionSwapper").GetComponent<PositionSwapper>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
 
     private void Start()
     {
+        positionSwapButton = string.Format("Player{0}PositionSwap", playerNumber);
         physObject = GetComponent<PhysicsObject>();
     }
 
@@ -43,21 +67,36 @@ public class PlayerPlatformingController : PhysicsObject
     {
         base.Update();
         InputHandling();
-
     }
+
+    float timeBetweenFreeze;
+    float timeBetweenGrav;
 
     private void InputHandling()
     {
-        if (Input.GetButtonDown(freezeButton))
+        //controller Input
+        bool FreezeAxis = Input.GetButtonDown(playerNumber + freezeAxis);
+        bool GravSwapAxis = Input.GetButtonDown(playerNumber + gravAxis);
+        bool SwapPositionAxis = Input.GetButtonDown(playerNumber + positionSwapAxis);
+
+        if (Input.GetButtonDown(freezeButton) || FreezeAxis)
         {
             isFrozen = !isFrozen;
         }
 
-        if (Input.GetButtonDown(gravSwapButton))
+        if (Input.GetButtonDown(gravSwapButton) || GravSwapAxis)
         {
             TryUseCollectable();
             //toggle gravity swap
             //physObject.gravitySwapped = !physObject.gravitySwapped;
+        }
+
+        if (Input.GetButtonDown(positionSwapButton) || SwapPositionAxis)
+        {
+            if (playerNumber == 1)
+                m_positionSwapper.player1SwapPos = !m_positionSwapper.player1SwapPos;
+            else
+                m_positionSwapper.player2SwapPos = !m_positionSwapper.player2SwapPos;
         }
     }
 
@@ -79,9 +118,13 @@ public class PlayerPlatformingController : PhysicsObject
 
         Vector2 move = Vector2.zero;
 
-        move.x = Input.GetAxis(horizontalCtrl);
+        move.x = Input.GetAxis(horizontalCtrl);                     //keyboard input
+        move.x = Input.GetAxis(playerNumber + horizontalAxis);      //controller input
 
-        if (Input.GetButtonDown(jumpButton) && grounded)
+        bool jumpButtonCheck = Input.GetButtonDown(jumpButton);
+        float jumpAxisCheck = Input.GetAxis(playerNumber + jumpAxis);
+        
+        if (jumpButtonCheck || jumpAxisCheck > 0 && grounded)
         {
 
 

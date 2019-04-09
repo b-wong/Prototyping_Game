@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    bool canRestart = true;
 
     public int scoreFromScene = 0;
     public int totalScore = 0;
@@ -46,8 +47,9 @@ public class GameManager : MonoBehaviour
     // Reset the current level and gravity swap charges.
     void ReloadCurrentScene()
     {
-        if (Input.GetButtonDown("ReloadScene"))
+        if ((Input.GetButtonDown("ReloadScene") || Input.GetAxisRaw("1_restart_ctrl") > 0 || Input.GetAxisRaw("2_restart_ctrl") > 0) && canRestart)
         {
+            StartCoroutine(restartRestrictTimer());
             scoreFromScene = 0;
             gravitySwapCharges = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -68,5 +70,15 @@ public class GameManager : MonoBehaviour
 
     }
 
-
+    IEnumerator restartRestrictTimer()
+    {
+        float timer = .3f;
+        while (timer > 0)
+        {
+            canRestart = false;
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+        canRestart = true;
+    }
 }

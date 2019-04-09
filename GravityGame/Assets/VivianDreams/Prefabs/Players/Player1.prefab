@@ -101,12 +101,16 @@ MonoBehaviour:
   gravitySwapped: 0
   isFrozen: 0
   velocity: {x: 0, y: 0}
+  playerNumber: 1
+  m_positionSwapper: {fileID: 8181735046923541812, guid: ea31a07d6d3c38e42bd477129ff6e455,
+    type: 3}
   maxSpeed: 7
   jumpTakeOffSpeed: 22.75
   jumpButton: Player1Jump
   horizontalCtrl: Player1Horizontal
   freezeButton: Player1Freeze
   gravSwapButton: Player1Grav
+  positionSwapButton: Player1PositionSwap
 --- !u!50 &3735549052844946527
 Rigidbody2D:
   serializedVersion: 4
