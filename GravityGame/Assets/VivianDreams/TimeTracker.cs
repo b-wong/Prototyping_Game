@@ -11,7 +11,7 @@ public class TimeTracker : MonoBehaviour
     // what the file will be called when it saves:
     string filename = "data.json";
     // variable for the path to the above file
-    string pathToSaveFileTest;
+    string pathToSaveFile;
 
 
     public float timeRecordedEveryNumberSeconds;
@@ -22,12 +22,12 @@ public class TimeTracker : MonoBehaviour
 
     private void Start()
     {
-        pathToSaveFileTest = Application.persistentDataPath + "/" + filename;
+        pathToSaveFile = Application.persistentDataPath + "/" + filename;
         Debug.Log(Application.persistentDataPath);
-        Debug.Log(pathToSaveFileTest);
+        Debug.Log(pathToSaveFile);
 
 
-        timeRecordedEveryNumberSeconds = 2f;
+        //timeRecordedEveryNumberSeconds = 2f;
 
     }
 
@@ -37,7 +37,7 @@ public class TimeTracker : MonoBehaviour
         // to save data to json file, hit V
         if (Input.GetKeyDown(KeyCode.V))
         {          
-            gameData.sceneLength = Time.timeSinceLevelLoad;
+            //gameData.sceneLength = Time.timeSinceLevelLoad;
 
             gameData.date = System.DateTime.Now.ToShortDateString();
             gameData.time = System.DateTime.Now.ToShortTimeString();
@@ -54,7 +54,13 @@ public class TimeTracker : MonoBehaviour
     void SaveData()
     {
         string contents = JsonUtility.ToJson(gameData, true);
-        System.IO.File.WriteAllText(pathToSaveFileTest, contents);
+        System.IO.File.WriteAllText(pathToSaveFile, contents);
+
+        using (StreamWriter writer = new StreamWriter(pathToSaveFile))
+        {
+            writer.Write(contents);
+        }
+
     }
 
     //    public void SaveDataToFile()
@@ -74,12 +80,12 @@ public class TimeTracker : MonoBehaviour
         try
         {
             // check if file exists so don't get an error if was deleted
-            if (System.IO.File.Exists(pathToSaveFileTest))
+            if (System.IO.File.Exists(pathToSaveFile))
             {
 
-                string contents = System.IO.File.ReadAllText(pathToSaveFileTest);
+                string contents = System.IO.File.ReadAllText(pathToSaveFile);
                 gameData = JsonUtility.FromJson<TimerData>(contents);
-                Debug.Log(gameData.date + ", " + gameData.time);
+                Debug.Log(gameData.date + ", " + gameData.time + ", " + gameData.sceneLength);
             }
             else
             {
@@ -92,6 +98,14 @@ public class TimeTracker : MonoBehaviour
             Debug.Log(ex.Message);
         }
     }
+
+    // Add a call to LoadNextLevel Script
+    public void OnSceneClose()
+    {
+        gameData.sceneLength = Time.timeSinceLevelLoad;
+    }
+
+
 
     //public void OnSceneClose()
     //{
