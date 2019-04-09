@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Loads the next scene in the build index.
-    void LoadNextScene()
+    public void LoadNextScene()
     {
         scoreFromScene = 0;
         totalScore = totalScore + scoreFromScene;

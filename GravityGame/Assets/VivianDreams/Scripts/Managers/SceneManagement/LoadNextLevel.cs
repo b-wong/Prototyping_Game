@@ -17,12 +17,15 @@ public class LoadNextLevel : MonoBehaviour
     {
         if (checkIfExitsOccupied())
         {
+            GameManager.instance.LoadNextScene();
+        }
+        //{
             //Debug.Log("got in LoadNextLevel script's checkIfExitsOccupied");
             //trying make JSON save work
             //timeTrackerScript.OnSceneClose();
           
-            SceneManager.LoadScene(levelToLoad);
-        }
+            //SceneManager.LoadScene(levelToLoad);
+        //}
     }
 
     bool checkIfExitsOccupied()
