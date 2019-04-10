@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class TimeTracker : MonoBehaviour
 {    
     // What the file will be called when it saves:
-    string filename = "data.json";
+    //string filename = "data.json";
     // Variable for the path to the above file
     string pathToSaveFile;
 
@@ -28,7 +28,7 @@ public class TimeTracker : MonoBehaviour
 
     private void Start()
     {
-        pathToSaveFile = Application.persistentDataPath + "/" + filename;
+        pathToSaveFile = Application.persistentDataPath + "/" + SceneManager.GetActiveScene().name + ".json";
         //Debug.Log(Application.persistentDataPath);
         //Debug.Log(pathToSaveFile);
         //timeRecordedEveryNumberSeconds = 2f;
@@ -57,13 +57,16 @@ public class TimeTracker : MonoBehaviour
         }
     }
 
+    
+
     // Add a call to LoadNextLevel Script
     public void OnSceneClose()
     {
         if (m_timestampOfSinceLevelLoad == -1)
         {
             m_timestampOfSinceLevelLoad = Time.timeSinceLevelLoad;
-            StartCoroutine(SaveDataIEnumerator());
+            SaveData();
+            //StartCoroutine(SaveDataIEnumerator());
         }
         else
         {
@@ -73,16 +76,16 @@ public class TimeTracker : MonoBehaviour
         }
 
         Debug.Log("Got into OnSceneClose");
-        gameData.sceneLength = sceneName + ": " + Time.timeSinceLevelLoad;
+        gameData.sceneLength = sceneName.name + ": " + Time.timeSinceLevelLoad;
     }
 
     public void SaveData()
     {
         //string path = Path.Combine(Application.persistentDataPath, "savedata.json");
-        gameData.sceneLength = sceneName + ": " + Time.timeSinceLevelLoad;
+        gameData.sceneLength = sceneName.name + ": " + Time.timeSinceLevelLoad;
 
         string contents = JsonUtility.ToJson(gameData, true);
-        System.IO.File.WriteAllText(pathToSaveFile, contents);
+        //System.IO.File.WriteAllText(pathToSaveFile, contents);
 
         //string json = JsonUtility.ToJson(m_data, true);
         //string path = Path.Combine(Application.persistentDataPath, "savedata.json");

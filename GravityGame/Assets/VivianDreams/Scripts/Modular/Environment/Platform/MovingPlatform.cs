@@ -47,10 +47,10 @@ public class MovingPlatform : MonoBehaviour, IToggleable
                 //Debug.LogFormat("targetWayPoint: {0}", targetWayPoint);
                 //Debug.LogFormat("transform {0}", transform.position);
 
-                transform.position += step;
+                //transform.position += step;
 
                 //jiterring
-                //body.velocity = step / Time.deltaTime;
+                body.velocity = step / Time.deltaTime;
 
                 if (transform.position == targetWayPoint)
                 {

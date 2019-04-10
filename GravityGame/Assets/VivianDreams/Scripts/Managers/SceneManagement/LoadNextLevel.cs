@@ -18,7 +18,7 @@ public class LoadNextLevel : MonoBehaviour
         if (checkIfExitsOccupied())
         {
             //trying make JSON save work
-            //timeTrackerScript.OnSceneClose();
+            timeTrackerScript.OnSceneClose();
 
             GameManager.instance.LoadNextScene();
         }
