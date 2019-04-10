@@ -59,8 +59,8 @@ public class GameManager : MonoBehaviour
     // Loads the next scene in the build index.
     public void LoadNextScene()
     {
-        scoreFromScene = 0;
         totalScore = totalScore + scoreFromScene;
+        scoreFromScene = 0;
         gravitySwapCharges = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
