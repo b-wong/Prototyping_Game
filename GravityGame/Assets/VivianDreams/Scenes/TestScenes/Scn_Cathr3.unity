@@ -1519,7 +1519,7 @@ PrefabInstance:
     - target: {fileID: 237644189038323826, guid: 9013d778310e0264fb88e102665e60dc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 237644189038323826, guid: 9013d778310e0264fb88e102665e60dc,
         type: 3}
@@ -2193,7 +2193,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1495298991}
+    m_TransformParent: {fileID: 706571886}
     m_Modifications:
     - target: {fileID: 2305576953885059926, guid: e632385b617aa7b4092b7fbef97f1b45,
         type: 3}
@@ -2203,32 +2203,32 @@ PrefabInstance:
     - target: {fileID: 2305576953885059924, guid: e632385b617aa7b4092b7fbef97f1b45,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 9.614453
       objectReference: {fileID: 0}
     - target: {fileID: 2305576953885059924, guid: e632385b617aa7b4092b7fbef97f1b45,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.2220283
       objectReference: {fileID: 0}
     - target: {fileID: 2305576953885059924, guid: e632385b617aa7b4092b7fbef97f1b45,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -11.346672
       objectReference: {fileID: 0}
     - target: {fileID: 2305576953885059924, guid: e632385b617aa7b4092b7fbef97f1b45,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2305576953885059924, guid: e632385b617aa7b4092b7fbef97f1b45,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2305576953885059924, guid: e632385b617aa7b4092b7fbef97f1b45,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2305576953885059924, guid: e632385b617aa7b4092b7fbef97f1b45,
         type: 3}
@@ -2596,6 +2596,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeRecordedEveryNumberSeconds: 0
+  gameData:
+    date: 
+    time: 
+    sceneLength: 
+    m_timeSinceLevelLoad: []
 --- !u!1 &469806976
 GameObject:
   m_ObjectHideFlags: 0
@@ -4069,7 +4074,7 @@ Transform:
   m_LocalPosition: {x: -9.922958, y: -0.522457, z: -0.2767618}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1495298991}
+  - {fileID: 385664955}
   - {fileID: 1162393430}
   - {fileID: 1848727425}
   m_Father: {fileID: 0}
@@ -6699,6 +6704,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorTrigger (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
+        type: 3}
+      propertyPath: DoorInfluences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
+        type: 3}
+      propertyPath: DoorInfluences.Array.data[0]
+      value: 
+      objectReference: {fileID: 1775601573}
     - target: {fileID: 6313852319492082855, guid: 05ffb14f6ee1eba40a121309b9aa3038,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6774,16 +6789,6 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
-        type: 3}
-      propertyPath: DoorInfluences.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
-        type: 3}
-      propertyPath: DoorInfluences.Array.data[0]
-      value: 
-      objectReference: {fileID: 1775601573}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05ffb14f6ee1eba40a121309b9aa3038, type: 3}
 --- !u!1001 &1357002837
@@ -7515,37 +7520,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1495298990
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1495298991}
-  m_Layer: 0
-  m_Name: ==LevelLoader==
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1495298991
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495298990}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.614453, y: 2.2220283, z: -1.3466723}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 385664955}
-  m_Father: {fileID: 706571886}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1500928243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10865,7 +10839,7 @@ PrefabInstance:
     - target: {fileID: 8181735046923541813, guid: ea31a07d6d3c38e42bd477129ff6e455,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8181735046923541813, guid: ea31a07d6d3c38e42bd477129ff6e455,
         type: 3}
@@ -13394,6 +13368,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
+        type: 3}
+      propertyPath: DoorInfluences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
+        type: 3}
+      propertyPath: DoorInfluences.Array.data[0]
+      value: 
+      objectReference: {fileID: 888036612}
     - target: {fileID: 6313852319492082855, guid: 05ffb14f6ee1eba40a121309b9aa3038,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13469,15 +13453,5 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
-        type: 3}
-      propertyPath: DoorInfluences.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6313852319492082859, guid: 05ffb14f6ee1eba40a121309b9aa3038,
-        type: 3}
-      propertyPath: DoorInfluences.Array.data[0]
-      value: 
-      objectReference: {fileID: 888036612}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05ffb14f6ee1eba40a121309b9aa3038, type: 3}

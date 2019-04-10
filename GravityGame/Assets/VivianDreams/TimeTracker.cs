@@ -4,31 +4,33 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// found save at Users/ (user) / AppData / LocalLow / DefaultCompany / External Data P01 / savedata.json
 public class TimeTracker : MonoBehaviour
-{
-    // found save at Users/ (user) / AppData / LocalLow / DefaultCompany / External Data P01 / savedata.json
-
-    //following GameProgrammingAcademy youtube tutorial
-    // what the file will be called when it saves:
+{    
+    // What the file will be called when it saves:
     string filename = "data.json";
-    // variable for the path to the above file
+    // Variable for the path to the above file
     string pathToSaveFile;
 
     Scene sceneName;
 
     public float timeRecordedEveryNumberSeconds;
+    private List<float> m_timeLevelTook = new List<float>();
+   // private List<float> m_timeBetweenClicks = new List<float>();
     private float m_timestampOfSinceLevelLoad = -1;
+    // private float m_timestampOfLastClick = -1;
+
+    private float test = 1000;
 
     // access to the script TimerData
+    [SerializeField]
     private TimerData gameData = new TimerData();
 
     private void Start()
     {
         pathToSaveFile = Application.persistentDataPath + "/" + filename;
-        Debug.Log(Application.persistentDataPath);
-        Debug.Log(pathToSaveFile);
-
-
+        //Debug.Log(Application.persistentDataPath);
+        //Debug.Log(pathToSaveFile);
         //timeRecordedEveryNumberSeconds = 2f;
     }
 
@@ -41,7 +43,7 @@ public class TimeTracker : MonoBehaviour
         // to save data to json file, hit V
         if (Input.GetKeyDown(KeyCode.V))
         {          
-            //gameData.sceneLength = Time.timeSinceLevelLoad;
+           // gameData.sceneLength = Time.timeSinceLevelLoad;
 
             gameData.date = System.DateTime.Now.ToShortDateString();
             gameData.time = System.DateTime.Now.ToShortTimeString();
@@ -55,21 +57,43 @@ public class TimeTracker : MonoBehaviour
         }
     }
 
-    void SaveData()
+    // Add a call to LoadNextLevel Script
+    public void OnSceneClose()
+    {
+        if (m_timestampOfSinceLevelLoad == -1)
+        {
+            m_timestampOfSinceLevelLoad = Time.timeSinceLevelLoad;
+            StartCoroutine(SaveDataIEnumerator());
+        }
+        else
+        {
+            float timestamp = Time.timeSinceLevelLoad;
+            m_timeLevelTook.Add(timestamp);            
+            //m_timeBetweenClicks.Add(timestamp - m_timestampOfLastClick);
+        }
+
+        Debug.Log("Got into OnSceneClose");
+        gameData.sceneLength = sceneName + ": " + Time.timeSinceLevelLoad;
+    }
+
+    public void SaveData()
     {
         //string path = Path.Combine(Application.persistentDataPath, "savedata.json");
-        //gameData.sceneLength = sceneName + ": " + Time.timeSinceLevelLoad;
+        gameData.sceneLength = sceneName + ": " + Time.timeSinceLevelLoad;
+
         string contents = JsonUtility.ToJson(gameData, true);
         System.IO.File.WriteAllText(pathToSaveFile, contents);
 
-        //using (StreamWriter writer = new StreamWriter(pathToSaveFile))
-        //{
-        //    writer.Write(contents);
-        //}
+        //string json = JsonUtility.ToJson(m_data, true);
+        //string path = Path.Combine(Application.persistentDataPath, "savedata.json");
 
+        using (StreamWriter writer = new StreamWriter(pathToSaveFile))
+        {
+            writer.Write(contents);
+        }
     }
 
-    void ReadData()
+    public void ReadData()
     {
         // in case file tampered with or corrupted, use try and catch
         try
@@ -93,27 +117,23 @@ public class TimeTracker : MonoBehaviour
         }
     }
 
-    // Add a call to LoadNextLevel Script
-    public void OnSceneClose()
+    private IEnumerator SaveDataIEnumerator()
     {
-        Debug.Log("Got into OnSceneClose");
-        gameData.sceneLength = sceneName + ": " + Time.timeSinceLevelLoad;
+        while (true)
+        {
+            float timestamp = Time.timeSinceLevelLoad;
+            yield return new WaitForSecondsRealtime(1);
+
+            //gameData.AddData(m_timeLevelTook);
+
+            gameData.AddData(timestamp);
+
+            m_timeLevelTook.Clear();
+        }
+
+
     }
 
-
-
-    //public void OnSceneClose()
-    //{
-    //    if (m_timestampOfSinceLevelLoad == -1)
-    //    {
-    //        m_timestampOfSinceLevelLoad = Time.timeSinceLevelLoad;
-    //        StartCoroutine(SaveDataOnInterval());
-    //    }
-    //    else
-    //    {
-    //        float timestamp = Time.timeSinceLevelLoad;
-    //    }
-    //}
 
     //private IEnumerator SaveDataOnInterval()
     //{
@@ -145,6 +165,25 @@ public class TimeTracker : MonoBehaviour
         //}
     //}
 }
+
+
+
+
+
+
+//public void OnSceneClose()
+//{
+//    if (m_timestampOfSinceLevelLoad == -1)
+//    {
+//        m_timestampOfSinceLevelLoad = Time.timeSinceLevelLoad;
+//        StartCoroutine(SaveDataOnInterval());
+//    }
+//    else
+//    {
+//        float timestamp = Time.timeSinceLevelLoad;
+//    }
+//}
+
 
 
 ////////// This is from script called LoadNextLevel:

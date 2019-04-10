@@ -11,13 +11,13 @@ public class TimerData
     //public float sceneLength;
     public string sceneLength = "";
 
-    //[SerializeField]
-    //private List<float> m_timeSinceLevelLoad = new List<float>();
+    [SerializeField]
+    private List<float> m_timeSinceLevelLoad = new List<float>();
 
-    //public void AddData(float timeSinceLevelLoad)
-    //{
-    //    m_timeSinceLevelLoad.Add(timeSinceLevelLoad);
-    //}
+    public void AddData(float timeSinceLevelLoad)
+    {
+        m_timeSinceLevelLoad.Add(timeSinceLevelLoad);    
+    }
 
 }
 
