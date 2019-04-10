@@ -67,17 +67,7 @@ public class PhysicsObject : MonoBehaviour
 
     void FixedUpdate()
     {
-
-        //gravityDirection = gravityDown;
-
-        //gravity swap
-
         GravitySwap();
-
-        /*foreach (PhysicsObject item in PhysicsManager.instance.physicsObjects)
-        {
-
-        }*/
 
         if (isFrozen == true)
         {

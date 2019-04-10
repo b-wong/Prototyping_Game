@@ -13,8 +13,9 @@ public class MoveWithPlatform : MonoBehaviour
 
     private void Awake()
     {
-        playerHolder = GameObject.FindWithTag("PlayerHolder");
         physics = GetComponent<PhysicsObject>();
+
+        playerHolder = GameObject.FindWithTag("PlayerHolder");
     }
 
  

@@ -14,10 +14,13 @@ public class MovingPlatform : MonoBehaviour, IToggleable
 
     Rigidbody2D body;
 
+    Vector2 velocity;
+
     private void Start()
     {
-        Vector3[] waypoints = new Vector3[pathHolder.childCount];
         body = GetComponent<Rigidbody2D>();
+
+        Vector3[] waypoints = new Vector3[pathHolder.childCount];
         for(int i = 0; i < waypoints.Length; i++)
         {
             waypoints[i] = pathHolder.GetChild(i).position;
@@ -40,8 +43,14 @@ public class MovingPlatform : MonoBehaviour, IToggleable
             {
                 Vector3 step = Vector3.ClampMagnitude(targetWayPoint - transform.position, speed * Time.deltaTime);
 
-                //transform.position += step;
-                body.velocity = step / Time.deltaTime;
+                //Debug.LogFormat("step: {0}", step);
+                //Debug.LogFormat("targetWayPoint: {0}", targetWayPoint);
+                //Debug.LogFormat("transform {0}", transform.position);
+
+                transform.position += step;
+
+                //jiterring
+                //body.velocity = step / Time.deltaTime;
 
                 if (transform.position == targetWayPoint)
                 {
