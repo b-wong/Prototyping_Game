@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 // found save at Users/ (user) / AppData / LocalLow / DefaultCompany / External Data P01 / savedata.json
 public class TimeTracker : MonoBehaviour
-{    
+{
     // What the file will be called when it saves:
     //string filename = "data.json";
     // Variable for the path to the above file
@@ -16,7 +16,7 @@ public class TimeTracker : MonoBehaviour
 
     public float timeRecordedEveryNumberSeconds;
     private List<float> m_timeLevelTook = new List<float>();
-   // private List<float> m_timeBetweenClicks = new List<float>();
+    // private List<float> m_timeBetweenClicks = new List<float>();
     private float m_timestampOfSinceLevelLoad = -1;
     // private float m_timestampOfLastClick = -1;
 
@@ -42,8 +42,8 @@ public class TimeTracker : MonoBehaviour
         //following GameProgrammingAcademy youtube tutorial
         // to save data to json file, hit V
         if (Input.GetKeyDown(KeyCode.V))
-        {          
-           // gameData.sceneLength = Time.timeSinceLevelLoad;
+        {
+            // gameData.sceneLength = Time.timeSinceLevelLoad;
 
             gameData.date = System.DateTime.Now.ToShortDateString();
             gameData.time = System.DateTime.Now.ToShortTimeString();
@@ -57,8 +57,6 @@ public class TimeTracker : MonoBehaviour
         }
     }
 
-    
-
     // Add a call to LoadNextLevel Script
     public void OnSceneClose()
     {
@@ -71,7 +69,7 @@ public class TimeTracker : MonoBehaviour
         else
         {
             float timestamp = Time.timeSinceLevelLoad;
-            m_timeLevelTook.Add(timestamp);            
+            m_timeLevelTook.Add(timestamp);
             //m_timeBetweenClicks.Add(timestamp - m_timestampOfLastClick);
         }
 
@@ -120,92 +118,18 @@ public class TimeTracker : MonoBehaviour
         }
     }
 
-    private IEnumerator SaveDataIEnumerator()
-    {
-        while (true)
-        {
-            float timestamp = Time.timeSinceLevelLoad;
-            yield return new WaitForSecondsRealtime(1);
-
-            //gameData.AddData(m_timeLevelTook);
-
-            gameData.AddData(timestamp);
-
-            m_timeLevelTook.Clear();
-        }
-
-
-    }
-
-
-    //private IEnumerator SaveDataOnInterval()
+    //private IEnumerator SaveDataIEnumerator()
     //{
     //    while (true)
     //    {
     //        float timestamp = Time.timeSinceLevelLoad;
-    //        yield return new WaitForSecondsRealtime(3);
+    //        yield return new WaitForSecondsRealtime(1);
+
+    //        //gameData.AddData(m_timeLevelTook);
 
     //        gameData.AddData(timestamp);
 
-
-
-            ////float timeWindow = Time.timeSinceLevelLoad - timestamp;
-
-            ////float clicksPerSecond = m_numberOfClicks / timeWindow;
-            ////float totalTimeBetweenClicks = 0;
-            ////for (int clickIndex = 0; clickIndex < m_timeBetweenClicks.Count; ++clickIndex)
-            ////{
-            ////    totalTimeBetweenClicks += m_timeBetweenClicks[clickIndex];
-            ////}
-            ////float averageTimeBetweenClicks = totalTimeBetweenClicks / m_timeBetweenClicks.Count;
-
-            ////m_data.AddData(clicksPerSecond, averageTimeBetweenClicks);
-
-
-
-            ////m_numberOfClicks = 0;
-            ////m_timeBetweenClicks.Clear();
-        //}
+    //        m_timeLevelTook.Clear();
+    //    }
     //}
 }
-
-
-
-
-
-
-//public void OnSceneClose()
-//{
-//    if (m_timestampOfSinceLevelLoad == -1)
-//    {
-//        m_timestampOfSinceLevelLoad = Time.timeSinceLevelLoad;
-//        StartCoroutine(SaveDataOnInterval());
-//    }
-//    else
-//    {
-//        float timestamp = Time.timeSinceLevelLoad;
-//    }
-//}
-
-
-
-////////// This is from script called LoadNextLevel:
-//////////public int levelToLoad;
-
-//////////public ExitTrigger[] exitTrigger;
-
-//////////private void Update()
-//////////{
-//////////    if (checkIfExitsOccupied())
-//////////        SceneManager.LoadScene(levelToLoad);
-//////////}
-
-//////////bool checkIfExitsOccupied()
-//////////{
-//////////    foreach (ExitTrigger exits in exitTrigger)
-//////////    {
-//////////        if (!exits.isTriggerActive)
-//////////            return false;
-//////////    }
-//////////    return true;
-//////////}

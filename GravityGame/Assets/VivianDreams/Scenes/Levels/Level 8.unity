@@ -4736,6 +4736,7 @@ Transform:
   m_Children:
   - {fileID: 1120122386}
   - {fileID: 1541820339}
+  - {fileID: 583792320}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4838,6 +4839,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535024865}
   m_CullTransparentMesh: 0
+--- !u!1 &583792318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 583792320}
+  - component: {fileID: 583792319}
+  m_Layer: 0
+  m_Name: TimeTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &583792319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583792318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1aa4a3758559ef41a6f4581ab61bf2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRecordedEveryNumberSeconds: 0
+  gameData:
+    date: 
+    time: 
+    sceneLength: 
+    m_timeSinceLevelLoad: []
+--- !u!4 &583792320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583792318}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.3785942, y: 0.6773338, z: -9.815388}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 504299327}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &612421325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5318,7 +5368,7 @@ Transform:
   m_GameObject: {fileID: 731631978}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.9329586, y: 15.502063, z: 0.2767618}
-  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1961288042}
   m_RootOrder: 3
@@ -5991,6 +6041,11 @@ PrefabInstance:
       propertyPath: exitTrigger.Array.data[1]
       value: 
       objectReference: {fileID: 2135712267}
+    - target: {fileID: 2305576953885059927, guid: e632385b617aa7b4092b7fbef97f1b45,
+        type: 3}
+      propertyPath: timeTrackerScript
+      value: 
+      objectReference: {fileID: 583792319}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e632385b617aa7b4092b7fbef97f1b45, type: 3}
 --- !u!4 &1249204528 stripped

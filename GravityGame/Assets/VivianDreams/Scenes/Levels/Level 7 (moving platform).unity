@@ -414,6 +414,7 @@ Transform:
   - {fileID: 75562556}
   - {fileID: 8943385}
   - {fileID: 605357093}
+  - {fileID: 1383950820}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1593,6 +1594,11 @@ PrefabInstance:
       propertyPath: exitTrigger.Array.data[1]
       value: 
       objectReference: {fileID: 765797554}
+    - target: {fileID: 2305576953885059927, guid: e632385b617aa7b4092b7fbef97f1b45,
+        type: 3}
+      propertyPath: timeTrackerScript
+      value: 
+      objectReference: {fileID: 2118776254}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e632385b617aa7b4092b7fbef97f1b45, type: 3}
 --- !u!1 &842943629
@@ -1621,7 +1627,7 @@ Transform:
   m_GameObject: {fileID: 842943629}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.1, y: -1.23, z: 10}
-  m_LocalScale: {x: 2.3690088, y: 2.3690088, z: 1.3935345}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2139000551}
   m_RootOrder: 3
@@ -8900,12 +8906,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383950819}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5.3325586, y: 2.3240604, z: -9.770244}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1832553665}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 207702800}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1418995111
 PrefabInstance:
@@ -9821,6 +9827,7 @@ Transform:
   - {fileID: 463167489}
   - {fileID: 1354724752}
   - {fileID: 274367969}
+  - {fileID: 2118776255}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9918,6 +9925,55 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 777846152}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2118776253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2118776255}
+  - component: {fileID: 2118776254}
+  m_Layer: 0
+  m_Name: TimeTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2118776254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118776253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1aa4a3758559ef41a6f4581ab61bf2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRecordedEveryNumberSeconds: 0
+  gameData:
+    date: 
+    time: 
+    sceneLength: 
+    m_timeSinceLevelLoad: []
+--- !u!4 &2118776255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118776253}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.737138, y: 1.8905027, z: -9.8620405}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1966447056}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2139000550
 GameObject:
   m_ObjectHideFlags: 0
