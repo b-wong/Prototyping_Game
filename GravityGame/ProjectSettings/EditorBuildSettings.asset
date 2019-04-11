@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/VivianDreams/Scenes/Levels/Level 4 (collectable(.unity
     guid: 1e73b08b67ae22044bd6ea91b1492cde
   - enabled: 1
+    path: Assets/VivianDreams/Scenes/Levels/Level 4b (swap).unity
+    guid: 1c3f6086c7f9f461e9d18ddff5730aa4
+  - enabled: 1
     path: Assets/VivianDreams/Scenes/Levels/Level 5.unity
     guid: 3c4d8db52f888f94ca044ff1e5e1b2cc
   - enabled: 1
