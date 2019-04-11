@@ -24,5 +24,19 @@ public class SplashScreen : MonoBehaviour
             //how to play
             SceneManager.LoadScene(15);
         }
+
+        if (Input.GetButtonDown("Player1Grav") || Input.GetButtonDown("Player2Grav"))
+        {
+            //how to play
+            SceneManager.LoadScene(15);
+        }
+
+        if (Input.GetButtonDown("Player1PositionSwap") || Input.GetButtonDown("Player2PositionSwap"))
+        {
+            //quit
+            Debug.Log("quit");
+            Application.Quit();
+        }
+
     }
 }

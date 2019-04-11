@@ -51,12 +51,12 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/VivianDreams/Scenes/Levels/Credits.unity
+    guid: 0b5ed657b2dfbed46a9e5d63b2359b4d
+  - enabled: 0
     path: Assets/VivianDreams/Scenes/Levels/EndGame.unity
     guid: 89039df748edea54da67984182e9657d
   - enabled: 1
-    path: Assets/VivianDreams/Scenes/Levels/How To Play.unity
+    path: Assets/VivianDreams/Scenes/Levels/Controls.unity
     guid: 10e25ca6b615a3b41a47b209d717b79a
-  - enabled: 1
-    path: Assets/VivianDreams/Scenes/Levels/Credits.unity
-    guid: 0b5ed657b2dfbed46a9e5d63b2359b4d
   m_configObjects: {}
