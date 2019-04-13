@@ -2093,14 +2093,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &469719900
-AudioListener:
+--- !u!114 &469719900
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469719899}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!20 &469719901
 Camera:
   m_ObjectHideFlags: 0
@@ -3906,7 +3911,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886595728}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33172ecffaeea4300854eb3b6161691f, type: 3}
   m_Name: 
@@ -9978,6 +9983,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 897976043}
     m_Modifications:
+    - target: {fileID: 8181735046923541819, guid: ea31a07d6d3c38e42bd477129ff6e455,
+        type: 3}
+      propertyPath: m_Name
+      value: PositionSwapper
+      objectReference: {fileID: 0}
     - target: {fileID: 8181735046923541812, guid: ea31a07d6d3c38e42bd477129ff6e455,
         type: 3}
       propertyPath: player1Object
@@ -9988,11 +9998,6 @@ PrefabInstance:
       propertyPath: player2Object
       value: 
       objectReference: {fileID: 387793584}
-    - target: {fileID: 8181735046923541819, guid: ea31a07d6d3c38e42bd477129ff6e455,
-        type: 3}
-      propertyPath: m_Name
-      value: PositionSwapper
-      objectReference: {fileID: 0}
     - target: {fileID: 8181735046923541813, guid: ea31a07d6d3c38e42bd477129ff6e455,
         type: 3}
       propertyPath: m_LocalPosition.x

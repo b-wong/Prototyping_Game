@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ae1a0ed9c31497c958f6272c84a2a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectableSound: event:/Foley/Collectable
 --- !u!61 &1985045397225585935
 BoxCollider2D:
   m_ObjectHideFlags: 0

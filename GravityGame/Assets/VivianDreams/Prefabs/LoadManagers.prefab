@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 7232808535847914226, guid: 376cf851e1260544eb82ec83ab1ac8e1,
     type: 3}
+  audioManager: {fileID: 3470069390210716520, guid: 0874918ea0cda9b488876b2a26bf6c6a,
+    type: 3}

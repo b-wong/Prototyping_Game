@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{fe97f20e-37be-47b4-99dc-c33b24ea040c}">
+        <property name="assetPath">
+            <value>Music/CloudrumHarmony_SoftSynthAttack2.mp3</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>40.045714285714283</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{e20e9fef-4644-4b0f-84f8-67d2e829c0da}</destination>
+        </relationship>
+    </object>
+</objects>
