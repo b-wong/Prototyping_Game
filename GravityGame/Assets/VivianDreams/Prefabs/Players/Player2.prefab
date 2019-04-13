@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 405175084495057513}
   - component: {fileID: 405175084495057514}
   - component: {fileID: 1817903271}
-  - component: {fileID: 4471317313794206831}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2
@@ -100,6 +99,7 @@ MonoBehaviour:
   gravityModifier: 8.5
   gravitySwapped: 0
   isFrozen: 0
+  relativeTo: {fileID: 0}
   velocity: {x: 0, y: 0}
   playerNumber: 2
   m_positionSwapper: {fileID: 8181735046923541812, guid: ea31a07d6d3c38e42bd477129ff6e455,
@@ -177,16 +177,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4471317313794206831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 405175084495057515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListenerNumber: 1

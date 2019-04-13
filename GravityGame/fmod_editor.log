@@ -8,130 +8,13 @@
 [WRN] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000000041CAEF28 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000000420DE198 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[ERR] assert                                   : assertion: 'listener >= 0 && listener < numlisteners' failed
-[ERR] assert                                   : assertion: 'listener >= 0 && listener < numlisteners' failed
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] SystemI::createSound                     : filename = FmodProject\VivianDreams\Build\Desktop/Master Bank.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000000042B66378 : node = 000000003D901890
-[LOG] SystemI::createSound                     : add node to async list : head = 00000000221619F8.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000042B66378
-[LOG] SystemI::createSound                     : filename = FmodProject\VivianDreams\Build\Desktop/Master Bank.bank : mode 02010082
-[LOG] SystemI::createSoundInternal             :     Create name='FmodProject\VivianDreams\Build\Desktop/Master Bank.bank', mode=0x02010082
-[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4153568
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17504
-[LOG] SystemI::createSound                     :     setdata soundi = 0000000042B65298 : node = 00000000167E0D30
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSound                     :     add node to async list : head = 00000000221619F8.  list count = 0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000003D9019A8
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='CloudrumMelody_DoubleOpen3', format=2, channels=2, frequency=48000, lengthbytes=448544, lengthpcm=1922194, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.871582.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000042B66378
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000042B65298
-[LOG] SystemI::createSoundInternal             :     Create name='FmodProject\VivianDreams\Build\Desktop/Master Bank.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4153568
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17504
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000167E0E48
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='CloudrumHarmony_SoftSynthAttack2', format=2, channels=2, frequency=48000, lengthbytes=464416, lengthpcm=1922194, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.574432.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000042B65298
-[LOG] SoundI::getSubSound                      : sound 0000000042B66378.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 0000000042B65298.  Subsound index 0 / 1
-[LOG] SoundI::release                          : CloudrumHarmony_SoftSynthAttack2 (000000003E829168)
-[LOG] SoundI::release                          :     CloudrumHarmony_SoftSynthAttack2 (0000000041BDA4F8)
-[LOG] SoundI::release                          :     CloudrumHarmony_SoftSynthAttack2 (000000003E828748)
-[LOG] SoundI::release                          : CloudrumMelody_DoubleOpen1 (000000003E8283E8)
-[LOG] SoundI::release                          :     CloudrumMelody_DoubleOpen1 (0000000041BDA1B8)
-[LOG] SoundI::release                          :     CloudrumMelody_DoubleOpen1 (000000003E828598)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] SystemI::createSound                     : filename = FmodProject\VivianDreams\Build\Desktop/Master Bank.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000000042B64BD8 : node = 000000004EDAFB40
-[LOG] SystemI::createSound                     : add node to async list : head = 00000000221619F8.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000042B64BD8
-[LOG] SystemI::createSound                     : filename = FmodProject\VivianDreams\Build\Desktop/Master Bank.bank : mode 02010082
-[LOG] SystemI::createSoundInternal             :     Create name='FmodProject\VivianDreams\Build\Desktop/Master Bank.bank', mode=0x02010082
-[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSound                     :     setdata soundi = 0000000042B66528 : node = 000000004EDAFC90
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4153568
-[LOG] SystemI::createSound                     :     add node to async list : head = 00000000221619F8.  list count = 0
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17504
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000004EDAFC58
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='CloudrumMelody_DoubleOpen2', format=2, channels=2, frequency=48000, lengthbytes=449088, lengthpcm=1922194, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.794556.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000042B64BD8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000042B66528
-[LOG] SystemI::createSoundInternal             :     Create name='FmodProject\VivianDreams\Build\Desktop/Master Bank.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4153568
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 17504
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000004EDAFDA8
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='CloudrumHarmony_SoftSynthAttack3', format=2, channels=2, frequency=48000, lengthbytes=473824, lengthpcm=1922194, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.663727.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000042B66528
-[LOG] SoundI::getSubSound                      : sound 0000000042B64BD8.  Subsound index 0 / 1
-[LOG] SoundI::getSubSound                      : sound 0000000042B66528.  Subsound index 0 / 1
-[LOG] SoundI::release                          : CloudrumHarmony_SoftSynthAttack2 (0000000042B65298)
-[LOG] SoundI::release                          :     CloudrumHarmony_SoftSynthAttack2 (0000000040417A68)
-[LOG] SoundI::release                          :     CloudrumHarmony_SoftSynthAttack2 (0000000042B65E68)
-[LOG] SoundI::release                          : CloudrumMelody_DoubleOpen3 (0000000042B66378)
-[LOG] SoundI::release                          :     CloudrumMelody_DoubleOpen3 (00000000404178C8)
-[LOG] SoundI::release                          :     CloudrumMelody_DoubleOpen3 (0000000042B65CB8)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] SoundI::release                          : CloudrumHarmony_SoftSynthAttack3 (0000000042B66528)
-[LOG] SoundI::release                          :     CloudrumHarmony_SoftSynthAttack3 (0000000040417DA8)
-[LOG] SoundI::release                          :     CloudrumHarmony_SoftSynthAttack3 (0000000042B64D88)
-[LOG] SoundI::release                          : CloudrumMelody_DoubleOpen2 (0000000042B64BD8)
-[LOG] SoundI::release                          :     CloudrumMelody_DoubleOpen2 (0000000040418DE8)
-[LOG] SoundI::release                          :     CloudrumMelody_DoubleOpen2 (0000000042B64A28)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
