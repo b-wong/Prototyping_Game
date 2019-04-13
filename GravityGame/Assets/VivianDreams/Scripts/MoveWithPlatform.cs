@@ -5,8 +5,7 @@ using UnityEngine;
 public class MoveWithPlatform : MonoBehaviour
 {
     PhysicsObject physics;
-
-
+    
     private void Awake()
     {
         physics = GetComponent<PhysicsObject>();
