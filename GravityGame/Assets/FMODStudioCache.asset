@@ -14,15 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114612618912767556}
-  - {fileID: 114985390044925844}
+  - {fileID: 114339187411683344}
   EditorEvents:
   - {fileID: 114476260775436898}
   MasterBanks:
-  - {fileID: 114985390044925844}
+  - {fileID: 114339187411683344}
   StringsBanks:
   - {fileID: 114612618912767556}
-  stringsBankWriteTime: 636902513379770991
+  stringsBankWriteTime: 636907554357958347
   cacheVersion: 3
+--- !u!114 &114339187411683344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: E:\Sheridan\Winter2019\Mechanics\Assignment2\MechanicsPrototype_Game-master\GravityGame\FmodProject\VivianDreams\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636907554357499580
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1448096
+  Exists: 1
 --- !u!114 &114476260775436898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,13 +58,13 @@ MonoBehaviour:
   Path: event:/Exit_Idle
   guid: 72fb45ad9c48e74294eb821b259be1a4
   Banks:
-  - {fileID: 114985390044925844}
+  - {fileID: 114339187411683344}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 8
   Length: 113000
 --- !u!114 &114612618912767556
 MonoBehaviour:
@@ -59,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FmodProject\VivianDreams\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636902513379770991
+  lastModified: 636907554357958347
   LoadResult: 0
   FileSizes:
   - Name: Desktop

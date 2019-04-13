@@ -8,9 +8,6 @@ public class MovingPlatform : MonoBehaviour
     public float speed;
     public float timeBetweenMove;
 
-    public float PauseDuration;
-    private bool pausePlatform = false;
-
     Rigidbody2D body;
 
     Vector2 velocity;
@@ -43,52 +40,26 @@ public class MovingPlatform : MonoBehaviour
 
         while (true)
         {
-            Vector3 step = Vector3.ClampMagnitude(targetWayPoint - transform.position, speed * Time.deltaTime);
+            Vector3 step = Vector3.ClampMagnitude(targetWayPoint - transform.position, speed * Time.smoothDeltaTime);
 
-            transform.position += step;
-
-            //body.velocity = step / Time.deltaTime;
+            body.velocity = step / Time.deltaTime;
 
             distanceTravelled += step.magnitude;
-                
-            if (/* distanceTravelled >= distanceToTravel*/ transform.position == targetWayPoint)
+            
+
+            if (distanceTravelled >= distanceToTravel)
             {
                 targetWayPointIndex = (targetWayPointIndex + 1) % waypoints.Length;
                 targetWayPoint = waypoints[targetWayPointIndex];
-
-                //distanceToTravel = (targetWayPoint - transform.position).magnitude;
-                //distanceTravelled = 0f;
+                
+                distanceToTravel = (targetWayPoint - transform.position).magnitude;
+                distanceTravelled = 0f;
+                
+                body.velocity = Vector2.zero;
 
                 yield return new WaitForSeconds(timeBetweenMove);
             }
             yield return null;
         }
     }
-
-    //IEnumerator timer()
-    //{
-    //    float timer = timeBetweenMove; 
-    //    while(timer > 0)
-    //    {
-    //        timer -= Time.deltaTime;
-    //        pausePlatform = true;
-    //        yield return null;
-    //    }
-    //    pausePlatform = false;
-    //}
-
-    //IEnumerator PlatformPauseTimer(float pauseDuration)
-    //{
-    //    pausePlatform = true;
-    //    while (pausePlatform)
-    //    {
-    //        yield return new WaitForSeconds(pauseDuration);
-    //        pausePlatform = false;
-    //    }
-    //}
-
-    //public void Toggle()
-    //{
-    //    StartCoroutine(PlatformPauseTimer(PauseDuration));
-    //}
 }

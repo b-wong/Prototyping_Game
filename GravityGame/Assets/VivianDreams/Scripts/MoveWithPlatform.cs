@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class MoveWithPlatform : MonoBehaviour
 {
-
-    [SerializeField]
-    GameObject playerHolder;
-
     PhysicsObject physics;
 
 
     private void Awake()
     {
         physics = GetComponent<PhysicsObject>();
-
-        playerHolder = GameObject.FindWithTag("PlayerHolder");
     }
 
  
@@ -25,13 +19,7 @@ public class MoveWithPlatform : MonoBehaviour
 
         if (collision.collider.CompareTag("MovingPlatform") && collision.contacts[0].normal.y > 0.7f)
         {
-            if (physics == null)
-            {
-                gameObject.transform.parent.SetParent(collision.gameObject.transform);
-            } else
-            {
-                physics.relativeTo = collision.rigidbody;
-            }
+            physics.relativeTo = collision.rigidbody;
         }
     }
 
@@ -39,7 +27,6 @@ public class MoveWithPlatform : MonoBehaviour
     {
         if (other.collider.CompareTag("MovingPlatform"))
         {
-            gameObject.transform.parent.SetParent(playerHolder.transform);
             if (physics != null)
                 physics.relativeTo = null;
         }

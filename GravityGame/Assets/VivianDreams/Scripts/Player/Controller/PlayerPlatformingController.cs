@@ -22,8 +22,7 @@ public class PlayerPlatformingController : PhysicsObject
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
     #endregion Speed modifiers
-
-
+    
 
     bool canFreeze = true;
     bool canGravSwap = true;
@@ -128,7 +127,6 @@ public class PlayerPlatformingController : PhysicsObject
         
         if ((jumpButtonCheck || jumpAxisCheck > 0) && grounded)
         {
-
 
             // Reverse direction of jump force according to gravity swap direction.
             if (gravitySwapped == false)
