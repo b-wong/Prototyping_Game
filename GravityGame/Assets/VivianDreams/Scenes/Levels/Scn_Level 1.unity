@@ -1657,7 +1657,7 @@ PrefabInstance:
     - target: {fileID: 6713064771059111002, guid: 05efbaf22ecca4e5482aef869e33ab04,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 388
       objectReference: {fileID: 0}
     - target: {fileID: 6713064771059111002, guid: 05efbaf22ecca4e5482aef869e33ab04,
         type: 3}
@@ -1677,7 +1677,7 @@ PrefabInstance:
     - target: {fileID: 6713064771059111002, guid: 05efbaf22ecca4e5482aef869e33ab04,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6713064771059111002, guid: 05efbaf22ecca4e5482aef869e33ab04,
         type: 3}
@@ -1687,7 +1687,7 @@ PrefabInstance:
     - target: {fileID: 6713064771059111002, guid: 05efbaf22ecca4e5482aef869e33ab04,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6713064771059111002, guid: 05efbaf22ecca4e5482aef869e33ab04,
         type: 3}
@@ -9988,16 +9988,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PositionSwapper
       objectReference: {fileID: 0}
-    - target: {fileID: 8181735046923541812, guid: ea31a07d6d3c38e42bd477129ff6e455,
-        type: 3}
-      propertyPath: player1Object
-      value: 
-      objectReference: {fileID: 576906375}
-    - target: {fileID: 8181735046923541812, guid: ea31a07d6d3c38e42bd477129ff6e455,
-        type: 3}
-      propertyPath: player2Object
-      value: 
-      objectReference: {fileID: 387793584}
     - target: {fileID: 8181735046923541813, guid: ea31a07d6d3c38e42bd477129ff6e455,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10053,6 +10043,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8181735046923541812, guid: ea31a07d6d3c38e42bd477129ff6e455,
+        type: 3}
+      propertyPath: player1Object
+      value: 
+      objectReference: {fileID: 576906375}
+    - target: {fileID: 8181735046923541812, guid: ea31a07d6d3c38e42bd477129ff6e455,
+        type: 3}
+      propertyPath: player2Object
+      value: 
+      objectReference: {fileID: 387793584}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea31a07d6d3c38e42bd477129ff6e455, type: 3}
 --- !u!1 &5620052603719960534
