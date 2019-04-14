@@ -10,6 +10,6 @@ public class CoinDisplay : MonoBehaviour
     private void Update()
     {
         //textUI.text = "Coins: " + Coins.numCoin;
-        textUI.text = "Bonus Score: " + (GameManager.instance.totalScore + GameManager.instance.scoreFromScene);
+        textUI.text = "" + (GameManager.instance.totalScore + GameManager.instance.scoreFromScene);
     }
 }

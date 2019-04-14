@@ -9,11 +9,12 @@ public class PositionSwapper : MonoBehaviour
 
     Vector3 player1Position;
     Vector3 player2Position;
-
-    [SerializeField]
+    
     GameObject player1Object;
-    [SerializeField]
     GameObject player2Object;
+    
+    GameObject RedSwapIndicator;
+    GameObject PurpleSwapIndicator;
 
     bool canSwap = true;
 
@@ -21,6 +22,9 @@ public class PositionSwapper : MonoBehaviour
     {
         player1Object = GameObject.FindWithTag("Player1");
         player2Object = GameObject.FindWithTag("Player2");
+
+        RedSwapIndicator = GameObject.FindWithTag("RedPosSwapIndicator");
+        PurpleSwapIndicator = GameObject.FindWithTag("PurplePosSwapIndicator");
     }
 
     private void Update()
@@ -29,6 +33,22 @@ public class PositionSwapper : MonoBehaviour
         {
             positionSwap();
         }
+
+        positionSwapIndicator();
+    }
+
+    void positionSwapIndicator()
+    {
+        if (player1SwapPos)
+            RedSwapIndicator.SetActive(true);
+        else
+            RedSwapIndicator.SetActive(false);
+
+
+        if (player2SwapPos)
+            PurpleSwapIndicator.SetActive(true);
+        else
+            PurpleSwapIndicator.SetActive(false);
     }
 
     void positionSwap()
