@@ -45,9 +45,10 @@ public class MovingPlatform : MonoBehaviour
             body.velocity = step / Time.deltaTime;
 
             distanceTravelled += step.magnitude;
-            
 
-            if (distanceTravelled >= distanceToTravel)
+            Debug.LogFormat("DistanceTravelled: {0}", distanceTravelled);
+
+            if (transform.position == targetWayPoint)
             {
                 targetWayPointIndex = (targetWayPointIndex + 1) % waypoints.Length;
                 targetWayPoint = waypoints[targetWayPointIndex];
@@ -56,6 +57,8 @@ public class MovingPlatform : MonoBehaviour
                 distanceTravelled = 0f;
                 
                 body.velocity = Vector2.zero;
+
+                Debug.LogFormat("DistanceTOTravelled----------------------------------: {0}", distanceToTravel);
 
                 yield return new WaitForSeconds(timeBetweenMove);
             }
