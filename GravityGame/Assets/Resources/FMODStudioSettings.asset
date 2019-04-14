@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: FmodProject/VivianDreams/VivianDreams.fspro
-  SourceProjectPathUnformatted: FmodProject/VivianDreams/VivianDreams.fspro
-  SourceBankPathUnformatted: FmodProject/VivianDreams/Build
+  sourceProjectPath: E:\Sheridan\Winter2019\Mechanics\Assignment2\FMOD\VivianDreams\VivianDreams.fspro
+  SourceProjectPathUnformatted: E:\Sheridan\Winter2019\Mechanics\Assignment2\FMOD\VivianDreams\VivianDreams.fspro
+  SourceBankPathUnformatted: E:\Sheridan\Winter2019\Mechanics\Assignment2\FMOD\VivianDreams\Build
   AutomaticEventLoading: 0
   AutomaticSampleLoading: 0
   ImportType: 0
