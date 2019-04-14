@@ -11,6 +11,8 @@ TagManager:
   - PositionSwapper
   - MovingPlatform
   - PlayerHolder
+  - RedPosSwapIndicator
+  - PurplePosSwapIndicator
   layers:
   - Default
   - TransparentFX

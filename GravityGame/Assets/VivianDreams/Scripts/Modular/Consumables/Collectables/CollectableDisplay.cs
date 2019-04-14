@@ -9,6 +9,6 @@ public class CollectableDisplay : MonoBehaviour
 
     void Update()
     {
-        textUI.text = string.Format("Gravity Charges: {0}", GameManager.instance.gravitySwapCharges);
+        textUI.text = string.Format("{0}", GameManager.instance.gravitySwapCharges);
     }
 }
