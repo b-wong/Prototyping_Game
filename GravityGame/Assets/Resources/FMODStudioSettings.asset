@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: FmodProject\VivianDreams\VivianDreams.fspro
-  SourceProjectPathUnformatted: FmodProject\VivianDreams\VivianDreams.fspro
-  SourceBankPathUnformatted: FmodProject\VivianDreams\Build
-  AutomaticEventLoading: 1
+  sourceProjectPath: FmodProject/VivianDreams/VivianDreams.fspro
+  SourceProjectPathUnformatted: FmodProject/VivianDreams/VivianDreams.fspro
+  SourceBankPathUnformatted: FmodProject/VivianDreams/Build
+  AutomaticEventLoading: 0
   AutomaticSampleLoading: 0
   ImportType: 0
   TargetAssetPath: 
