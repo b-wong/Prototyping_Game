@@ -10,22 +10,19 @@ public class LoadNextLevel : MonoBehaviour
 
     public ExitTrigger[] exitTrigger;
 
-    //trying make JSON save work
+    //to make JSON save work
     public TimeTracker timeTrackerScript;
 
     private void Update()
     {
         if (checkIfExitsOccupied())
         {
-            //trying make JSON save work
+            //to make JSON save work
             timeTrackerScript.OnSceneClose();
 
             GameManager.instance.LoadNextScene();
         }
-        //{
-            //Debug.Log("got in LoadNextLevel script's checkIfExitsOccupied");        
-            //SceneManager.LoadScene(levelToLoad);
-        //}
+
     }
 
     bool checkIfExitsOccupied()
