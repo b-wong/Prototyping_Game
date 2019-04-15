@@ -37,7 +37,7 @@ public class TimeTracker : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V))
         {
             // gameData.sceneLength = Time.timeSinceLevelLoad;
-
+            m_timestampOfSinceLevelLoad = Time.timeSinceLevelLoad;
             gameData.date = System.DateTime.Now.ToShortDateString();
             gameData.time = System.DateTime.Now.ToShortTimeString();
             SaveData();
@@ -55,6 +55,8 @@ public class TimeTracker : MonoBehaviour
     {
         if (m_timestampOfSinceLevelLoad == -1)
         {
+            gameData.date = System.DateTime.Now.ToShortDateString();
+            gameData.time = System.DateTime.Now.ToShortTimeString();
             m_timestampOfSinceLevelLoad = Time.timeSinceLevelLoad;
             SaveData();        
         }
